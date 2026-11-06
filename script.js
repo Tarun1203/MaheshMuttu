@@ -19,9 +19,10 @@ const $ = id => document.getElementById(id);
 
 const T = {
   en: {
-    cardSign:"With love and warm regards, from both families",
+    cardSign:"With love and warm regards, from both families", dateCaps:"06 December 2026", thankYou:"Thank You", toTop:"Back to top",
     mantraEyebrow:"The Sacred Vow", mantraText:"With this sacred thread, so dear to my life, I tie the bond of marriage. May you live a hundred blessed autumns.",
     shubha:"Shubha Vivaha", scroll:"Scroll", weddingEyebrow:"The Auspicious Day", weddingHead:"Our Wedding Day", dateDay:"Sunday", dateFull:"06 December 2026", timeNote:"Indian Standard Time",
+    sealHint:"Tap the seal to open", stackHint:"Keep scrolling to turn the photos", portraitEyebrow:"The Couple", mapNote:"Illustration, not to scale · tap the map to open Google Maps",
     coverPre:"The wedding of", openInvite:"Open Invitation", openQuiet:"Open without music", music:"Music",
     groom:"Mahesh", bride:"Muttu",
     blessing:"With the blessings of our beloved family and elders", inviteLine:"We joyfully invite you to the wedding of",
@@ -37,9 +38,10 @@ const T = {
     share:"Share on WhatsApp", gratitude:"With Love & Gratitude", langSwitch:"ಕನ್ನಡ", langCode:"kn"
   },
   kn: {
-    cardSign:"ಪ್ರೀತಿ ಮತ್ತು ಆತ್ಮೀಯ ವಂದನೆಗಳೊಂದಿಗೆ, ಎರಡೂ ಕುಟುಂಬಗಳಿಂದ",
+    cardSign:"ಪ್ರೀತಿ ಮತ್ತು ಆತ್ಮೀಯ ವಂದನೆಗಳೊಂದಿಗೆ, ಎರಡೂ ಕುಟುಂಬಗಳಿಂದ", dateCaps:"06 ಡಿಸೆಂಬರ್ 2026", thankYou:"ಧನ್ಯವಾದಗಳು", toTop:"ಮೇಲಕ್ಕೆ",
     mantraEyebrow:"ಪವಿತ್ರ ಪ್ರತಿಜ್ಞೆ", mantraText:"ನನ್ನ ಜೀವನಕ್ಕೆ ಆಧಾರವಾದ ಈ ಮಂಗಳ ಸೂತ್ರದಿಂದ ನಿನ್ನನ್ನು ಬಂಧಿಸುತ್ತೇನೆ. ನೀನು ನೂರು ವರ್ಷ ಸುಖವಾಗಿ ಬಾಳು.",
     shubha:"ಶುಭ ವಿವಾಹ", scroll:"ಕೆಳಗೆ ಸರಿಸಿ", weddingEyebrow:"ಶುಭ ದಿನ", weddingHead:"ನಮ್ಮ ವಿವಾಹ ದಿನ", dateDay:"ಭಾನುವಾರ", dateFull:"06 ಡಿಸೆಂಬರ್ 2026", timeNote:"ಭಾರತೀಯ ಕಾಲಮಾನ",
+    sealHint:"ತೆರೆಯಲು ಮುದ್ರೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ", stackHint:"ಫೋಟೋಗಳನ್ನು ನೋಡಲು ಕೆಳಗೆ ಸರಿಸಿ", portraitEyebrow:"ವಧೂವರರು", mapNote:"ಚಿತ್ರಣ ಮಾತ್ರ · ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಲು ನಕ್ಷೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ",
     coverPre:"ಶುಭ ವಿವಾಹ", openInvite:"ಆಹ್ವಾನ ತೆರೆಯಿರಿ", openQuiet:"ಸಂಗೀತವಿಲ್ಲದೆ ತೆರೆಯಿರಿ", music:"ಸಂಗೀತ",
     groom:"ಮಹೇಶ್", bride:"ಮುತ್ತು",
     blessing:"ನಮ್ಮ ಪ್ರೀತಿಯ ಕುಟುಂಬ ಮತ್ತು ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ", inviteLine:"ಇವರ ಶುಭ ವಿವಾಹಕ್ಕೆ ತಮ್ಮನ್ನು ಸಂತೋಷದಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ",
@@ -96,11 +98,19 @@ const endUTC = startUTC + CONFIG.calendarHours * 3600000;
     details: `Muhurtham 11:02 AM. Map: ${CONFIG.mapLink}` + (CONFIG.siteLink ? `\n${CONFIG.siteLink}` : ""), location: CONFIG.venue, ctz: "Asia/Kolkata" });
   $("calBtn").href = "https://calendar.google.com/calendar/render?" + q.toString();
 })();
+/* Flip-card digits: the old number folds down to reveal the new one */
 function setNum(id, v) {
   const el = $(id); v = String(v);
-  if (el.textContent === v) return;
-  el.textContent = v;
-  if (!reduceMotion) { el.classList.remove("tick"); void el.offsetWidth; el.classList.add("tick"); }
+  if (el.dataset.v === v) return;
+  const old = el.dataset.v; el.dataset.v = v;
+  const top = el.querySelector(".fh-top b"), bot = el.querySelector(".fh-bot b");
+  if (reduceMotion || old === undefined || document.hidden) { top.textContent = v; bot.textContent = v; return; }
+  el.querySelectorAll(".flap").forEach(f => f.remove());
+  const ft = document.createElement("div"); ft.className = "fh fh-top flap flap-top"; ft.innerHTML = `<b>${old}</b>`;
+  const fb = document.createElement("div"); fb.className = "fh fh-bot flap flap-bot"; fb.innerHTML = `<b>${v}</b>`;
+  top.textContent = v;
+  el.append(ft, fb);
+  setTimeout(() => { bot.textContent = v; ft.remove(); fb.remove(); }, 640);
 }
 function tick() {
   const diff = startUTC - Date.now();
@@ -157,6 +167,111 @@ document.querySelectorAll("canvas.dust").forEach(c => {
     else if (!e.isIntersecting && on) { on = false; cancelAnimationFrame(raf); }
   }).observe(c.parentElement);
 });
+
+/* Soft falling petals (rose, marigold, jasmine) on the cover, hero and thank-you screen */
+document.querySelectorAll("canvas.petals").forEach(c => {
+  const ctx = c.getContext("2d"), dpr = Math.min(devicePixelRatio || 1, 2);
+  const cols = ["#C9576E", "#E08A9B", "#E39B3A", "#F2BE5C", "#FBF2DF"];
+  let w, h, parts = [], on = false, raf;
+  function size() { w = c.clientWidth; h = c.clientHeight; c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  function spawn(i) { return { x: Math.random() * w, y: i ? Math.random() * h : -16, r: 4 + Math.random() * 5, vy: .28 + Math.random() * .45, vx: (Math.random() - .5) * .3, a: Math.random() * 6.3, va: (Math.random() - .5) * .016, sw: Math.random() * 6.3, c: cols[Math.floor(Math.random() * cols.length)] }; }
+  function frame() {
+    ctx.clearRect(0, 0, w, h);
+    for (const p of parts) {
+      p.y += p.vy; p.sw += .01; p.x += p.vx + Math.sin(p.sw) * .3; p.a += p.va;
+      if (p.y > h + 16) Object.assign(p, spawn(false));
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.globalAlpha = .75; ctx.fillStyle = p.c;
+      ctx.beginPath(); ctx.moveTo(0, -p.r); ctx.quadraticCurveTo(p.r * .9, 0, 0, p.r); ctx.quadraticCurveTo(-p.r * .9, 0, 0, -p.r); ctx.fill(); ctx.restore();
+    }
+    if (on) raf = requestAnimationFrame(frame);
+  }
+  size(); parts = Array.from({ length: Math.round(Math.min(22, w / 55)) }, () => spawn(true));
+  addEventListener("resize", size);
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !on) { on = true; raf = requestAnimationFrame(frame); }
+    else if (!e.isIntersecting && on) { on = false; cancelAnimationFrame(raf); }
+  }).observe(c.parentElement);
+});
+
+/* Marigold, jasmine and rose garlands for the corners */
+(function () {
+  const W = 340;
+  const q = (a, c, b, t) => (1 - t) * (1 - t) * a + 2 * (1 - t) * t * c + t * t * b;
+  let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  function marigold(x, y, r) {
+    let o = `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})">`;
+    o += `<circle r="${r}" fill="#C8641A"/>`;
+    for (let k = 0; k < 10; k++) { const a = k * 36 + rnd() * 10; o += `<circle cx="${(Math.cos(a * Math.PI / 180) * r * .62).toFixed(1)}" cy="${(Math.sin(a * Math.PI / 180) * r * .62).toFixed(1)}" r="${(r * .48).toFixed(1)}" fill="${k % 2 ? "#E8892B" : "#F09A2E"}"/>`; }
+    o += `<circle r="${(r * .55).toFixed(1)}" fill="#F7B53E"/><circle r="${(r * .28).toFixed(1)}" fill="#FCD271"/>`;
+    o += `<circle cx="${(-r * .3).toFixed(1)}" cy="${(-r * .35).toFixed(1)}" r="${(r * .18).toFixed(1)}" fill="#FFE7A8" opacity=".8"/></g>`;
+    return o;
+  }
+  function jasmine(x, y, rot) {
+    return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(0)})"><ellipse rx="2.6" ry="5.4" cx="-2.6" fill="#FFFBF0" stroke="#E6D6B4" stroke-width=".5"/><ellipse rx="2.6" ry="5.4" cx="2.6" fill="#FFFBF0" stroke="#E6D6B4" stroke-width=".5"/></g>`;
+  }
+  function rose(x, y, r) {
+    return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><circle r="${r}" fill="#8E1E35"/><circle r="${(r * .72).toFixed(1)}" fill="#B3304A"/><path d="M${-r * .45} 0a${r * .45} ${r * .45} 0 1 1 ${r * .9} 0" fill="none" stroke="#7A1529" stroke-width="1.2"/><circle r="${(r * .25).toFixed(1)}" fill="#D0566C"/></g>`;
+  }
+  // strand along a quadratic curve: jasmine underneath, marigolds on top, a rose every few flowers
+  function strand(p0, c, p1, steps, r) {
+    let back = "", front = "";
+    for (let i = 0; i <= steps; i++) {
+      const t = i / steps, x = q(p0[0], c[0], p1[0], t), y = q(p0[1], c[1], p1[1], t);
+      back += jasmine(x + (rnd() - .5) * 4, y + r * .9, rnd() * 360) + jasmine(x + (rnd() - .5) * 4, y - r * .9, rnd() * 360);
+      front += (i % 6 === 3) ? rose(x, y, r * .95) : marigold(x, y, r * (.9 + rnd() * .2));
+    }
+    return back + front;
+  }
+  function hanging(x, y0, len, bell) {
+    let o = `<path d="M${x} ${y0}v${len}" stroke="#D4A34F" stroke-width="1.2"/>`;
+    for (let k = 0; k < Math.floor(len / 11); k++) o += k % 2 ? jasmine(x, y0 + 8 + k * 11, 0) : marigold(x, y0 + 8 + k * 11, 5.5);
+    if (bell) {
+      const by = y0 + len;
+      o += `<path d="M${x} ${by}c-7 0-10 7-10 15h20c0-8-3-15-10-15z" fill="url(#foil)" stroke="#8A5D1E" stroke-width=".6"/><circle cx="${x}" cy="${by + 18}" r="2.6" fill="#E7C878"/>`;
+    }
+    return o;
+  }
+  let svg = "";
+  svg += strand([-6, 12], [150, 108], [W - 20, 8], 30, 10);       // main swag across the top
+  svg += strand([-6, 4], [-2, 90], [14, 180], 16, 9);              // drape down the side
+  svg += hanging(W - 20, 14, 52, true);                             // tassel with a small brass bell at the inner end
+  svg += hanging(156, 66, 30, false);                               // short drop at the lowest point of the swag
+  svg += marigold(W - 20, 10, 12) + rose(-2, 8, 12);
+  document.querySelectorAll("svg.garland").forEach(el => { el.innerHTML = svg; });
+})();
+
+/* Photo stack: as the guest scrolls, the top photo is dragged off to one side and the next comes forward */
+(function () {
+  const sec = document.querySelector(".stack-sec"); if (!sec) return;
+  const cards = [...sec.querySelectorAll(".pcard")], n = cards.length;
+  if (reduceMotion) { sec.classList.add("stack-static"); return; }
+  const tilt = [-4, 3, -2, 4, -3];
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
+    const p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+    const f = p * (n - 1);                                   // how many cards have been dragged away
+    cards.forEach((c, i) => {
+      const gone = Math.min(1, Math.max(0, f - i));          // 0 = in the stack, 1 = dragged off
+      const depth = Math.max(0, i - f);                      // place in the stack behind the top card
+      const dir = i % 2 ? 1 : -1;
+      const eased = gone * gone * (3 - 2 * gone);
+      const x = dir * eased * 115, y = depth * 14 - eased * 6;
+      const rot = tilt[i % tilt.length] * Math.min(1, depth) + dir * eased * 22;
+      const sc = 1 - Math.min(depth, 3) * .05;
+      c.style.transform = `translate(${x.toFixed(2)}%, ${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(3)})`;
+      c.style.opacity = String(i < n - 1 ? Math.min(1 - Math.max(0, (gone - .6) / .4), 1 - Math.max(0, depth - 3)) : 1);
+      c.style.zIndex = String(100 - i);
+      c.style.boxShadow = `0 ${(30 - depth * 6).toFixed(0)}px ${(60 - depth * 10).toFixed(0)}px rgba(0,0,0,${(.45 - depth * .08).toFixed(2)})`;
+    });
+    sec.querySelector(".stack-hint").style.opacity = p > .92 ? "0" : "";
+  }
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener("resize", update);
+  update();
+})();
 
 /* Scroll progress */
 (function () {
@@ -264,11 +379,12 @@ $("musicBtn").addEventListener("click", async () => { await Music.toggle(); upda
   async function open(withMusic) {
     if (opened) return; opened = true;
     if (withMusic) { await Music.toggle(); updateMusicLabel(); }
-    cover.classList.add("open"); window.scrollTo(0, 0);
-    setTimeout(() => root.classList.remove("gated"), reduceMotion ? 0 : 900);
-    setTimeout(() => { cover.hidden = true; }, reduceMotion ? 0 : 2000);
+    cover.classList.add("breaking");                       // the seal lifts away first
+    const wait = reduceMotion ? 0 : 700;
+    setTimeout(() => { cover.classList.add("open"); window.scrollTo(0, 0); }, wait);
+    setTimeout(() => root.classList.remove("gated"), wait + (reduceMotion ? 0 : 900));
+    setTimeout(() => { cover.hidden = true; }, wait + (reduceMotion ? 0 : 2000));
   }
   $("openInvite").addEventListener("click", () => open(true));
   $("openQuiet").addEventListener("click", () => open(false));
-  $("openInvite").focus({ preventScroll: true });
 })();
