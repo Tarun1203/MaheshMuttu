@@ -12,7 +12,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Kannada:wght@400;600;700;800&family=Tiro+Devanagari+Sanskrit&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Great+Vibes&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Kannada:wght@400;600;700;800&family=Tiro+Devanagari+Sanskrit&display=swap">
 <link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 <!--HEAD-END-->
@@ -54,6 +54,34 @@
       </g>
       <circle cx="60" cy="30" r="3" fill="currentColor"/>
     </symbol>
+    <symbol id="garland" viewBox="0 0 260 200" overflow="visible">
+      <path d="M0 6C60 10 110 40 150 92" fill="none" stroke="#FBF2DF" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 10"/>
+      <path d="M0 22C46 26 84 52 112 96" fill="none" stroke="#FBF2DF" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 9" opacity=".85"/>
+      <g fill="#E39B3A"><circle cx="40" cy="12" r="7"/><circle cx="88" cy="32" r="7.5"/><circle cx="126" cy="62" r="7"/><circle cx="30" cy="27" r="6"/><circle cx="66" cy="44" r="6.5"/></g>
+      <g fill="#F2BE5C"><circle cx="40" cy="12" r="3.4"/><circle cx="88" cy="32" r="3.6"/><circle cx="126" cy="62" r="3.4"/><circle cx="30" cy="27" r="3"/><circle cx="66" cy="44" r="3.1"/></g>
+      <path d="M150 92v26M112 96v20" stroke="#D4A34F" stroke-width="1.2"/>
+      <g fill="url(#foil)"><path d="M150 118c-6 0-9 6-9 13h18c0-7-3-13-9-13z"/><path d="M112 116c-5 0-7 5-7 10h14c0-5-2-10-7-10z"/></g>
+      <circle cx="150" cy="134" r="2.4" fill="#E7C878"/><circle cx="112" cy="129" r="2" fill="#E7C878"/>
+      <path d="M150 140c4 6 4 12 0 18-4-6-4-12 0-18z" fill="#FBF2DF"/>
+    </symbol>
+    <symbol id="diya" viewBox="0 0 80 64">
+      <circle cx="40" cy="20" r="16" fill="#E7C878" opacity=".14"/>
+      <path d="M40 30c-6-6-5-15 0-24 5 9 6 18 0 24z" fill="#F3DFA6"/>
+      <path d="M40 28c-2-3-2-7 0-11 2 4 2 8 0 11z" fill="#FFF8E6"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M8 34c3 12 16 18 32 18s29-6 32-18z"/><path d="M8 34h64M72 34l7-5"/><path d="M30 52h20l3 8H27z"/>
+        <path d="M18 42c6 4 14 6 22 6" stroke-width=".8"/>
+      </g>
+    </symbol>
+    <symbol id="feather" viewBox="0 0 240 40">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M0 20h70M170 20h70"/>
+        <path d="M76 20c12-14 30-14 44 0-14 14-32 14-44 0z"/><path d="M164 20c-12-14-30-14-44 0 14 14 32 14 44 0z"/>
+        <ellipse cx="98" cy="20" rx="9" ry="6"/><ellipse cx="142" cy="20" rx="9" ry="6"/>
+      </g>
+      <ellipse cx="98" cy="20" rx="3.6" ry="2.6" fill="currentColor"/><ellipse cx="142" cy="20" rx="3.6" ry="2.6" fill="currentColor"/>
+      <path d="M120 10l5 10-5 10-5-10z" fill="currentColor"/>
+    </symbol>
     <symbol id="ic-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
     <symbol id="ic-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></g></symbol>
     <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></symbol>
@@ -67,6 +95,9 @@
   <div class="half half-r" aria-hidden="true"></div>
   <svg class="mandala cover-mandala" aria-hidden="true"></svg>
   <canvas class="dust" aria-hidden="true"></canvas>
+  <canvas class="petals" aria-hidden="true"></canvas>
+  <svg class="garland g-l" viewBox="0 0 340 190" aria-hidden="true"></svg>
+  <svg class="garland g-r" viewBox="0 0 340 190" aria-hidden="true"></svg>
   <div class="frame-box cover-box">
     <svg class="c-corner tl" aria-hidden="true"><use href="#corner"/></svg>
     <svg class="c-corner tr" aria-hidden="true"><use href="#corner"/></svg>
@@ -74,12 +105,33 @@
     <svg class="c-corner br" aria-hidden="true"><use href="#corner"/></svg>
     <div class="cover-in">
       <p class="deva" lang="sa">॥ श्री गणेशाय नमः ॥</p>
-      <svg class="crest" aria-hidden="true"><use href="#crest"/></svg>
       <p class="label" data-i18n="shubha">Shubha Vivaha</p>
       <h1 class="names foil shine" id="coverNames"><span data-i18n="groom">Mahesh</span><span class="amp">&amp;</span><span data-i18n="bride">Muttu</span></h1>
       <svg class="divider" aria-hidden="true"><use href="#divider"/></svg>
-      <p class="date-band">06 · 12 · 2026</p>
-      <button class="btn btn-gold glint" id="openInvite" type="button"><span aria-hidden="true">♪</span><span data-i18n="openInvite">Open Invitation</span></button>
+      <p class="date-band" data-i18n="dateCaps">06 December 2026</p>
+      <button class="seal" id="openInvite" type="button" aria-label="Open invitation">
+        <svg viewBox="0 0 200 230" aria-hidden="true">
+          <defs>
+            <radialGradient id="wax" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#FBE9B6"/><stop offset=".35" stop-color="#E2B562"/><stop offset=".75" stop-color="#B98835"/><stop offset="1" stop-color="#8A5D1E"/></radialGradient>
+            <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6B1A2C"/><stop offset=".5" stop-color="#8A2B3D"/><stop offset="1" stop-color="#5A1222"/></linearGradient>
+          </defs>
+          <path d="M70 150l-22 74 22-14 14 18 16-70z" fill="url(#ribbon)"/>
+          <path d="M130 150l22 74-22-14-14 18-16-70z" fill="url(#ribbon)"/>
+          <path d="M191.7 100.0 L194.3 106.6 L190.4 112.7 L187.0 118.5 L187.2 125.0 L186.1 131.3 L181.5 136.3 L177.7 141.3 L174.7 146.7 L168.5 149.7 L160.7 151.0 L157.4 155.4 L157.8 164.2 L156.1 171.9 L151.5 176.3 L146.6 180.8 L141.3 184.8 L134.1 184.4 L126.7 182.2 L121.0 184.2 L115.6 188.4 L109.2 187.6 L102.9 183.2 L97.1 181.8 L91.3 183.1 L85.4 182.9 L79.2 183.5 L71.5 187.8 L63.5 190.4 L58.3 185.5 L55.2 177.6 L50.9 172.7 L46.0 169.1 L42.8 163.5 L39.5 158.4 L34.0 155.4 L29.7 151.1 L29.3 144.2 L27.8 138.4 L20.6 135.3 L12.7 131.8 L9.4 126.0 L8.0 119.5 L6.6 113.1 L9.2 106.4 L15.7 100.0 L18.8 94.3 L16.1 88.2 L14.8 81.9 L18.0 76.5 L20.7 71.1 L20.7 64.7 L22.3 58.7 L25.4 53.4 L26.1 46.3 L25.9 37.8 L30.8 33.2 L40.0 33.4 L47.8 33.2 L53.1 30.4 L58.6 28.3 L64.2 26.6 L68.2 21.2 L72.3 14.8 L78.4 13.5 L85.0 15.1 L90.8 12.6 L96.8 7.4 L103.3 5.9 L109.7 8.0 L116.0 9.5 L121.8 12.7 L125.8 20.4 L129.4 27.2 L135.4 27.3 L143.2 25.2 L149.4 26.8 L154.4 30.4 L160.6 32.8 L166.1 36.2 L168.8 42.3 L172.1 47.6 L178.6 50.9 L183.2 55.8 L181.4 63.8 L178.1 71.6 L178.5 77.5 L180.2 83.0 L180.9 88.6 L184.7 94.1Z" fill="#5E3A12" transform="translate(2 4)" opacity=".55"/>
+          <path d="M191.7 100.0 L194.3 106.6 L190.4 112.7 L187.0 118.5 L187.2 125.0 L186.1 131.3 L181.5 136.3 L177.7 141.3 L174.7 146.7 L168.5 149.7 L160.7 151.0 L157.4 155.4 L157.8 164.2 L156.1 171.9 L151.5 176.3 L146.6 180.8 L141.3 184.8 L134.1 184.4 L126.7 182.2 L121.0 184.2 L115.6 188.4 L109.2 187.6 L102.9 183.2 L97.1 181.8 L91.3 183.1 L85.4 182.9 L79.2 183.5 L71.5 187.8 L63.5 190.4 L58.3 185.5 L55.2 177.6 L50.9 172.7 L46.0 169.1 L42.8 163.5 L39.5 158.4 L34.0 155.4 L29.7 151.1 L29.3 144.2 L27.8 138.4 L20.6 135.3 L12.7 131.8 L9.4 126.0 L8.0 119.5 L6.6 113.1 L9.2 106.4 L15.7 100.0 L18.8 94.3 L16.1 88.2 L14.8 81.9 L18.0 76.5 L20.7 71.1 L20.7 64.7 L22.3 58.7 L25.4 53.4 L26.1 46.3 L25.9 37.8 L30.8 33.2 L40.0 33.4 L47.8 33.2 L53.1 30.4 L58.6 28.3 L64.2 26.6 L68.2 21.2 L72.3 14.8 L78.4 13.5 L85.0 15.1 L90.8 12.6 L96.8 7.4 L103.3 5.9 L109.7 8.0 L116.0 9.5 L121.8 12.7 L125.8 20.4 L129.4 27.2 L135.4 27.3 L143.2 25.2 L149.4 26.8 L154.4 30.4 L160.6 32.8 L166.1 36.2 L168.8 42.3 L172.1 47.6 L178.6 50.9 L183.2 55.8 L181.4 63.8 L178.1 71.6 L178.5 77.5 L180.2 83.0 L180.9 88.6 L184.7 94.1Z" fill="url(#wax)"/>
+          <circle cx="100" cy="100" r="66" fill="none" stroke="#8A5D1E" stroke-width="2.4" opacity=".7"/>
+          <circle cx="100" cy="101.5" r="66" fill="none" stroke="#FFF1CC" stroke-width="1" opacity=".55"/>
+          <circle cx="100" cy="100" r="58" fill="none" stroke="#8A5D1E" stroke-width="1" stroke-dasharray="1.5 4.5" opacity=".7"/>
+          <g font-family="'Rozha One', Georgia, serif" text-anchor="middle">
+            <text x="100" y="114" font-size="46" fill="#FFF1CC" opacity=".6" transform="translate(0 1.5)">M<tspan font-family="'Cinzel Decorative', Georgia, serif" font-size="22" dy="-8"> &amp; </tspan><tspan dy="8">M</tspan></text>
+            <text x="100" y="114" font-size="46" fill="#7A5019">M<tspan font-family="'Cinzel Decorative', Georgia, serif" font-size="22" dy="-8"> &amp; </tspan><tspan dy="8">M</tspan></text>
+          </g>
+          <path d="M100 52l4 8-4 8-4-8z" fill="#8A5D1E" opacity=".75"/>
+          <path d="M100 132l4 8-4 8-4-8z" fill="#8A5D1E" opacity=".75"/>
+          <ellipse cx="72" cy="58" rx="22" ry="10" fill="#FFF6DA" opacity=".35" transform="rotate(-30 72 58)"/>
+        </svg>
+      </button>
+      <p class="seal-hint"><span aria-hidden="true">♪</span> <span data-i18n="sealHint">Tap the seal to open</span></p>
       <button class="quiet" id="openQuiet" type="button" data-i18n="openQuiet">Open without music</button>
     </div>
   </div>
@@ -95,6 +147,9 @@
     <div class="toran" aria-hidden="true"></div>
     <svg class="mandala hero-mandala" aria-hidden="true"></svg>
     <canvas class="dust" aria-hidden="true"></canvas>
+    <canvas class="petals" aria-hidden="true"></canvas>
+    <svg class="garland g-l" viewBox="0 0 340 190" aria-hidden="true"></svg>
+    <svg class="garland g-r" viewBox="0 0 340 190" aria-hidden="true"></svg>
     <div class="hero-in">
       <p class="deva" lang="sa">॥ श्री गणेशाय नमः ॥</p>
       <p class="hero-bless" data-i18n="blessing">With the blessings of our beloved family and elders</p>
@@ -104,6 +159,20 @@
       <p class="hero-time"><span data-i18n="muhurthamLabel">Muhurtham</span> · <span data-i18n="timeFull">11:02 AM</span></p>
     </div>
     <a class="scroll-cue" href="#invite"><span data-i18n="scroll">Scroll</span><i aria-hidden="true"></i></a>
+  </section>
+
+  <!-- Portrait -->
+  <section class="royal-deep portrait" id="portrait" aria-labelledby="portraitHead">
+    <div class="inner">
+      <p class="label reveal" data-i18n="portraitEyebrow">The Couple</p>
+      <p class="portrait-date reveal">06 · 12 · 26</p>
+      <figure class="portrait-frame reveal">
+        <!-- Couple portrait / illustration: put portrait.png (or .jpg / .webp) in assets/images/ -->
+        <img class="photo portrait-img" data-src="assets/images/portrait.png" alt="Portrait of Mahesh and Muttu">
+        <div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div>
+      </figure>
+      <h2 class="portrait-names reveal" id="portraitHead"><span data-i18n="groom">Mahesh</span><span class="amp">&amp;</span><span data-i18n="bride">Muttu</span></h2>
+    </div>
   </section>
 
   <!-- 2 · Invitation card -->
@@ -118,11 +187,7 @@
       <h2 class="title dark" data-i18n="introHead">Two hearts. One journey.</h2>
       <svg class="divider gold" aria-hidden="true"><use href="#divider"/></svg>
       <p class="prose" data-i18n="introText">With the blessings of our beloved family and elders, we joyfully invite you to be part of the wedding celebration of Mahesh &amp; Muttu. Your presence and blessings will make this special day even more meaningful.</p>
-      <div class="card-names">
-        <span class="cn" data-i18n="groom">Mahesh</span>
-        <span class="cn-amp"><svg aria-hidden="true"><use href="#crest"/></svg></span>
-        <span class="cn" data-i18n="bride">Muttu</span>
-      </div>
+      <p class="card-names"><span class="cn" data-i18n="groom">Mahesh</span><span class="cn-amp">&amp;</span><span class="cn" data-i18n="bride">Muttu</span></p>
       <ul class="card-meta">
         <li><svg aria-hidden="true"><use href="#ic-cal"/></svg><span data-i18n="dateLong">Sunday, 06 December 2026</span></li>
         <li><svg aria-hidden="true"><use href="#ic-clock"/></svg><span><span data-i18n="muhurthamLabel">Muhurtham</span> · <span data-i18n="timeFull">11:02 AM</span></span></li>
@@ -177,10 +242,10 @@
       <div class="countdown reveal">
         <p class="label" data-i18n="countHead">Counting down to the Muhurtham</p>
         <div class="count" id="count">
-          <div class="tile"><b id="cd-d">--</b><span data-i18n="days">Days</span></div>
-          <div class="tile"><b id="cd-h">--</b><span data-i18n="hours">Hours</span></div>
-          <div class="tile"><b id="cd-m">--</b><span data-i18n="minutes">Minutes</span></div>
-          <div class="tile"><b id="cd-s">--</b><span data-i18n="seconds">Seconds</span></div>
+          <div class="tile"><div class="flip" id="cd-d"><div class="fh fh-top"><b>--</b></div><div class="fh fh-bot"><b>--</b></div></div><span data-i18n="days">Days</span></div>
+          <div class="tile"><div class="flip" id="cd-h"><div class="fh fh-top"><b>--</b></div><div class="fh fh-bot"><b>--</b></div></div><span data-i18n="hours">Hours</span></div>
+          <div class="tile"><div class="flip" id="cd-m"><div class="fh fh-top"><b>--</b></div><div class="fh fh-bot"><b>--</b></div></div><span data-i18n="minutes">Minutes</span></div>
+          <div class="tile"><div class="flip" id="cd-s"><div class="fh fh-top"><b>--</b></div><div class="fh fh-bot"><b>--</b></div></div><span data-i18n="seconds">Seconds</span></div>
         </div>
         <p class="done foil" id="countDone" hidden data-i18n="married">Happily married</p>
       </div>
@@ -198,7 +263,45 @@
         <p class="label" data-i18n="venueEyebrow">The Venue</p>
         <h2 class="title foil">KEB Function Hall</h2>
         <p class="venue-addr">M.Hosalli, Yadgiri, Karnataka 585202</p>
-        <svg class="divider" aria-hidden="true"><use href="#divider"/></svg>
+        <a class="map-art" href="https://maps.app.goo.gl/XNUv31upHitVHLnG6?g_st=aw" target="_blank" rel="noopener" aria-label="Open KEB Function Hall in Google Maps">
+          <svg viewBox="0 0 640 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v6" stroke="#B98835" stroke-opacity=".28" stroke-width="1"/></pattern>
+              <radialGradient id="parch" cx=".5" cy=".5" r=".75"><stop offset="0" stop-color="#FFF8E6"/><stop offset="1" stop-color="#EBD8B0"/></radialGradient>
+            </defs>
+            <rect width="640" height="320" fill="url(#parch)"/>
+            <g fill="url(#hatch)" stroke="#B98835" stroke-opacity=".55" stroke-width="1">
+              <rect x="40" y="30" width="120" height="70" rx="6"/><rect x="190" y="24" width="96" height="88" rx="6"/>
+              <rect x="420" y="22" width="150" height="66" rx="6"/><rect x="40" y="200" width="110" height="90" rx="6"/>
+              <rect x="190" y="214" width="120" height="76" rx="6"/><rect x="470" y="196" width="120" height="96" rx="6"/>
+              <rect x="350" y="214" width="84" height="80" rx="6"/>
+            </g>
+            <path d="M0 160C120 150 200 170 320 160S520 140 640 150" fill="none" stroke="#8A5D1E" stroke-width="18" stroke-linecap="round" opacity=".18"/>
+            <path d="M0 160C120 150 200 170 320 160S520 140 640 150" fill="none" stroke="#FFF8E6" stroke-width="12" stroke-linecap="round"/>
+            <path d="M0 160C120 150 200 170 320 160S520 140 640 150" fill="none" stroke="#B98835" stroke-width="1.2" stroke-dasharray="10 8"/>
+            <g fill="none" stroke-linecap="round">
+              <path d="M330 0C326 60 322 110 320 160S318 260 326 320" stroke="#8A5D1E" stroke-width="13" opacity=".16"/>
+              <path d="M330 0C326 60 322 110 320 160S318 260 326 320" stroke="#FFF8E6" stroke-width="8"/>
+              <path d="M170 0C176 60 172 120 176 320M400 120C440 104 470 110 640 112M0 112C60 116 120 110 176 114M176 196H640" stroke="#C9A35A" stroke-width="3" opacity=".6"/>
+            </g>
+            <path d="M600 230c-22 10-40 30-38 60" fill="none" stroke="#9CB8B4" stroke-width="10" stroke-linecap="round" opacity=".35"/>
+            <g fill="#B98835" opacity=".5"><circle cx="372" cy="58" r="6"/><circle cx="386" cy="70" r="5"/><circle cx="366" cy="76" r="4"/><circle cx="104" cy="140" r="5"/><circle cx="560" cy="176" r="5"/><circle cx="250" cy="186" r="4"/><circle cx="452" cy="250" r="5"/><circle cx="466" cy="262" r="4"/></g>
+            <g transform="translate(588 56)" fill="none" stroke="#8A5D1E" stroke-width="1"><circle r="22"/><circle r="16" stroke-dasharray="2 3"/><path d="M0-28l5 28-5 28-5-28z" fill="#B98835" stroke="none"/><path d="M-28 0l28-4 28 4-28 4z" fill="#D4A34F" stroke="none" opacity=".6"/></g>
+            <text x="588" y="20" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-size="11" fill="#8A5D1E">N</text>
+            <g class="map-pin" transform="translate(330 150)">
+              <ellipse class="ping" cx="0" cy="10" rx="26" ry="9" fill="none" stroke="#5A1222" stroke-width="1.6"/>
+              <ellipse cx="0" cy="10" rx="9" ry="3.4" fill="#000" opacity=".22"/>
+              <path d="M0 8C-14-8-18-16-18-26a18 18 0 0 1 36 0c0 10-4 18-18 34z" fill="#5A1222" stroke="#D4A34F" stroke-width="1.6"/>
+              <circle cx="0" cy="-26" r="7" fill="#E7C878"/>
+            </g>
+            <g transform="translate(330 104)">
+              <rect x="-92" y="-17" width="184" height="30" rx="3" fill="#FFF8E6" stroke="#B98835"/>
+              <text y="3" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-size="13" font-weight="600" letter-spacing="1" fill="#5A1222">KEB FUNCTION HALL</text>
+            </g>
+            <text x="20" y="306" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="14" fill="#8A5D1E">M.Hosalli, Yadgiri</text>
+          </svg>
+        </a>
+        <p class="map-note" data-i18n="mapNote">Illustration, not to scale · tap the map to open Google Maps</p>
         <div class="venue-row">
           <figure class="qr"><div id="qr" aria-label="QR code for the venue location"></div><figcaption data-i18n="scanLoc">Scan for location</figcaption></figure>
           <div class="btn-col">
@@ -211,17 +314,22 @@
     </div>
   </section>
 
-  <!-- 5 · Photos -->
-  <section class="royal moments" id="story">
-    <div class="inner">
-      <p class="label reveal" data-i18n="storyEyebrow">Our Story</p>
-      <h2 class="title foil reveal" data-i18n="momentsHead">Our Favourite Moments</h2>
-      <svg class="divider reveal" aria-hidden="true"><use href="#divider"/></svg>
-      <!-- Photos: put couple-1.jpg, couple-2.jpg, couple-3.jpg in assets/images/ -->
-      <div class="gallery">
-        <figure class="arch reveal"><img class="photo" data-src="assets/images/couple-1.jpg" alt="Mahesh and Muttu"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></figure>
-        <figure class="arch reveal"><img class="photo" data-src="assets/images/couple-2.jpg" alt="Mahesh and Muttu"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></figure>
-        <figure class="arch reveal"><img class="photo" data-src="assets/images/couple-3.jpg" alt="Mahesh and Muttu"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></figure>
+  <!-- 5 · Photos: a stack of cards that slide away as guests scroll -->
+  <section class="royal moments stack-sec" id="story" style="--n:5">
+    <div class="stack-stick">
+      <div class="inner">
+        <p class="label" data-i18n="storyEyebrow">Our Story</p>
+        <h2 class="title foil" data-i18n="momentsHead">Our Favourite Moments</h2>
+        <svg class="feather" aria-hidden="true"><use href="#feather"/></svg>
+        <!-- Photos: put couple-1 … couple-5 (.jpg / .png / .webp) in assets/images/ -->
+        <div class="stack" id="photoStack">
+          <figure class="pcard" style="--i:0"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-1.jpg" alt="Mahesh and Muttu, photo 1"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>01 / 05</figcaption></figure>
+          <figure class="pcard" style="--i:1"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-2.jpg" alt="Mahesh and Muttu, photo 2"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>02 / 05</figcaption></figure>
+          <figure class="pcard" style="--i:2"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-3.jpg" alt="Mahesh and Muttu, photo 3"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>03 / 05</figcaption></figure>
+          <figure class="pcard" style="--i:3"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-4.jpg" alt="Mahesh and Muttu, photo 4"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>04 / 05</figcaption></figure>
+          <figure class="pcard" style="--i:4"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-5.jpg" alt="Mahesh and Muttu, photo 5"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>05 / 05</figcaption></figure>
+        </div>
+        <p class="stack-hint" data-i18n="stackHint">Keep scrolling to turn the photos</p>
       </div>
     </div>
   </section>
@@ -230,7 +338,7 @@
   <section class="royal-deep blessings">
     <svg class="mandala bless-mandala" aria-hidden="true"></svg>
     <div class="inner narrow">
-      <svg class="crest reveal" aria-hidden="true"><use href="#crest"/></svg>
+      <svg class="diya reveal" aria-hidden="true"><use href="#diya"/></svg>
       <h2 class="title foil reveal" data-i18n="blessHead">Your Presence Means Everything</h2>
       <svg class="divider reveal" aria-hidden="true"><use href="#divider"/></svg>
       <p class="prose light reveal" data-i18n="blessText">We warmly invite you to celebrate this beautiful occasion with us and bless Mahesh &amp; Muttu as they begin their new journey together.</p>
@@ -241,11 +349,20 @@
   </section>
 </main>
 
-<footer class="foot">
-  <svg class="divider" aria-hidden="true"><use href="#divider"/></svg>
-  <p class="names foil small"><span data-i18n="groom">Mahesh</span><span class="amp">&amp;</span><span data-i18n="bride">Muttu</span></p>
-  <p class="label" data-i18n="dateLong">Sunday, 06 December 2026</p>
-  <p class="foot-thanks" data-i18n="gratitude">With Love &amp; Gratitude</p>
+<footer class="finale" id="thanks">
+  <svg class="mandala finale-mandala" aria-hidden="true"></svg>
+  <canvas class="petals" aria-hidden="true"></canvas>
+  <svg class="garland g-l" viewBox="0 0 340 190" aria-hidden="true"></svg>
+  <svg class="garland g-r" viewBox="0 0 340 190" aria-hidden="true"></svg>
+  <div class="finale-in reveal">
+    <p class="thanks-script" data-i18n="thankYou">Thank You</p>
+    <svg class="divider" aria-hidden="true"><use href="#divider"/></svg>
+    <p class="names foil shine"><span data-i18n="groom">Mahesh</span><span class="amp">&amp;</span><span data-i18n="bride">Muttu</span></p>
+    <p class="date-band" data-i18n="dateCaps">06 December 2026</p>
+    <p class="foot-thanks" data-i18n="gratitude">With Love &amp; Gratitude</p>
+    <p class="foot-venue">KEB Function Hall · M.Hosalli, Yadgiri</p>
+    <a class="to-top" href="#home"><span data-i18n="toTop">Back to top</span> ↑</a>
+  </div>
 </footer>
 
 <script src="script.js" defer></script>
