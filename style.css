@@ -511,3 +511,15 @@ body.kn .stack-hint{font-family:var(--kn);letter-spacing:.02em;text-transform:no
 .stack-static .stack{width:auto;aspect-ratio:auto;max-height:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1000px}
 .stack-static .pcard{position:relative;inset:auto;aspect-ratio:4/5;transform:none!important}
 .stack-static .stack-hint{display:none}
+
+/* ---- bigger photos: sized from the screen height so they fill phones and tablets ---- */
+.stack-stick{padding-block:56px 24px}
+.stack-sec .title{font-size:clamp(1.8rem,5.4vw,3rem)}
+.stack-sec .feather{margin:6px auto 14px;height:32px}
+.stack{width:min(86vw,calc(64vh * .7));width:min(86vw,calc(64svh * .7));aspect-ratio:7/10;max-height:none}
+.pcard{padding:10px 10px 34px}
+.pcard-img .photo{object-position:50% 20%}
+.stack-hint{margin-top:34px}
+.portrait-frame{width:min(86vw,calc(72vh * .72));width:min(86vw,calc(72svh * .72));aspect-ratio:13/18}
+.portrait-img{object-position:50% 20%}
+@media (max-height:640px){.stack{max-height:none}}

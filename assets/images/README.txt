@@ -13,3 +13,6 @@ A hand-drawn / illustrated portrait looks best (like the reference video). A nor
 
 "Our Favourite Moments" is a stack of up to five photo cards (couple-1 … couple-5).
 As guests scroll, each photo slides off to the side to reveal the next one.
+
+Update: the photo stack now takes up to ten photos (couple-1 … couple-10) and shows only the ones that exist.
+If there is no "portrait" file, the big arch in "The Couple" section shows couple-1 instead.
