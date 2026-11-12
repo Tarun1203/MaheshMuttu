@@ -400,3 +400,7 @@ body.kn .open-cta{font-family:var(--kn);letter-spacing:.02em;text-transform:none
 .stack-sec>*{position:relative;z-index:1}
 @media (min-width:900px){.stack-stick .inner{padding-inline:clamp(24px,6vw,120px)}}
 @media (max-width:600px){.stack-sec::before,.stack-sec::after{width:96px;opacity:.85}}
+
+/* corner flower art removed */
+.portrait::before,.details::before,.stack-stick::before,.portrait::after,.details::after,.stack-stick::after,
+.stack-sec::before,.stack-sec::after,.ivory-card::after,.venue-box::after{content:none!important;background:none!important}
