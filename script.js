@@ -282,7 +282,7 @@ document.querySelectorAll("canvas.petals").forEach(c => {
       c.style.transform = `translate(${x.toFixed(2)}%, ${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(3)})`;
       c.style.opacity = String(i < n - 1 ? Math.min(1 - Math.max(0, (gone - .6) / .4), 1 - Math.max(0, depth - 3)) : 1);
       c.style.zIndex = String(100 - i);
-      c.style.boxShadow = `0 ${(30 - depth * 6).toFixed(0)}px ${(60 - depth * 10).toFixed(0)}px rgba(0,0,0,${(.45 - depth * .08).toFixed(2)})`;
+      c.style.boxShadow = `0 ${(30 - depth * 6).toFixed(0)}px ${(60 - depth * 10).toFixed(0)}px rgba(40,10,16,${(.22 - depth * .04).toFixed(2)})`;
     });
     sec.querySelector(".stack-hint").style.opacity = p > .92 ? "0" : "";
   }
