@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@400;500;600&family=Noto+Serif+Kannada:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap">
-<link rel="stylesheet" href="style.css?v=20261112q">
+<link rel="stylesheet" href="style.css?v=20261112r">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 <!--HEAD-END-->
 </head>
@@ -303,7 +303,7 @@
         <h2 class="title foil" data-i18n="momentsHead">Our Favourite Moments</h2>
         <span class="rule" aria-hidden="true"></span>
         <!-- Photos: put couple-1 … couple-10 (.jpg / .jpeg / .png / .webp); empty slots are removed automatically in assets/images/ -->
-        <div class="stack" id="photoStack">
+        <div class="stack" id="photoStack" tabindex="0" role="group" aria-label="Photos of Mahesh and Muttu. Tap or press the right arrow for the next photo.">
           <figure class="pcard" style="--i:0"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-1.jpg" alt="Mahesh and Muttu, photo 1"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>01 / 10</figcaption></figure>
           <figure class="pcard" style="--i:1"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-2.jpg" alt="Mahesh and Muttu, photo 2"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>02 / 10</figcaption></figure>
           <figure class="pcard" style="--i:2"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-3.jpg" alt="Mahesh and Muttu, photo 3"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>03 / 10</figcaption></figure>
@@ -315,7 +315,12 @@
           <figure class="pcard" style="--i:8"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-9.jpg" alt="Mahesh and Muttu, photo 9"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>09 / 10</figcaption></figure>
           <figure class="pcard" style="--i:9"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-10.jpg" alt="Mahesh and Muttu, photo 10"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>10 / 10</figcaption></figure>
         </div>
-        <p class="stack-hint" data-i18n="stackHint">Keep scrolling to turn the photos</p>
+        <div class="stack-nav">
+          <button class="stack-btn" id="stackPrev" type="button" data-i18n-label="prevPhoto" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="stack-count" id="stackCount">01 / 07</span>
+          <button class="stack-btn" id="stackNext" type="button" data-i18n-label="nextPhoto" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <p class="stack-hint" data-i18n="stackHint">Tap or swipe the photo</p>
       </div>
     </div>
   </section>
@@ -348,7 +353,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20261112q" defer></script>
+<script src="script.js?v=20261112r" defer></script>
 <!--BODY-END-->
 </body>
 </html>
