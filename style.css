@@ -382,3 +382,10 @@ body.kn .open-cta{font-family:var(--kn);letter-spacing:.02em;text-transform:none
 .cover-in>.seal{animation:rise 1.6s var(--ease) 1.2s forwards,sealBob 2.6s ease-in-out 2.8s infinite}
 .cover-in>.open-cta{animation:rise 1.6s var(--ease) 1.6s forwards,ctaPulse 2.4s ease-out 3.2s infinite}
 .cover-in>.quiet{animation-delay:2.1s}
+
+/* corner art: full floral bouquet (rose, lotus, jasmine, marigold) */
+.portrait::before,.details::before,.stack-stick::before,.portrait::after,.details::after,.stack-stick::after{background:url("assets/corner-flowers.svg") left bottom/contain no-repeat;opacity:1;filter:none;width:clamp(150px,24vw,330px)}
+.portrait::after,.details::after,.stack-stick::after{transform:scale(-1,-1)}
+.ivory-card,.venue-box{position:relative}
+.ivory-card::after,.venue-box::after{content:"";position:absolute;right:-18px;bottom:-18px;width:clamp(110px,16vw,190px);aspect-ratio:1;background:url("assets/corner-flowers.svg") left bottom/contain no-repeat;transform:scaleX(-1);pointer-events:none;z-index:2}
+@media (max-width:600px){.portrait::before,.details::before,.stack-stick::before,.portrait::after,.details::after,.stack-stick::after{width:132px;opacity:.9}}
