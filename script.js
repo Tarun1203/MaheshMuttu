@@ -135,7 +135,7 @@ if (window.QRCode) drawQR(); else window.addEventListener("load", drawQR, { once
    The portrait falls back to couple-1 when there is no portrait file.
    Photo-stack cards with no photo are removed, so the stack shows exactly the photos that exist. */
 (function () {
-  const exts = ["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG", "WEBP"];
+  const exts = ["jpeg", "jpg", "png", "webp", "JPG", "JPEG", "PNG", "WEBP"];
   function load(img) {
     return new Promise(done => {
       const bases = [img.dataset.src, img.dataset.fallback].filter(Boolean).map(b => b.replace(/\.[a-z0-9]+$/i, ""));
