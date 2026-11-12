@@ -20,7 +20,7 @@ const $ = id => document.getElementById(id);
 const T = {
   en: {
     cardSign:"With love and warm regards, from both families", dateCaps:"06 December 2026", thankYou:"Thank You", toTop:"Back to top",
-    mantraEyebrow:"The Sacred Vow", mantraText:"With this sacred thread, so dear to my life, I tie the bond of marriage. May you live a hundred blessed autumns.",
+    mantraEyebrow:"A Sacred Blessing", mantraText:"With this sacred thread, so dear to my life, I tie the bond of marriage. May you live a hundred blessed autumns.",
     shubha:"Wedding Reception", scroll:"Scroll", weddingEyebrow:"The Celebration", weddingHead:"Our Reception Day", dateDay:"Sunday", dateFull:"06 December 2026", timeNote:"Indian Standard Time",
     sealHint:"Tap to open the invitation", stackHint:"Tap or swipe the photo", prevPhoto:"Previous photo", nextPhoto:"Next photo", portraitEyebrow:"The Couple", mapNote:"Illustration, not to scale · tap the map to open Google Maps",
     coverPre:"The wedding reception of", openInvite:"Open Invitation", openQuiet:"Open without music", music:"Music",
@@ -39,7 +39,7 @@ const T = {
   },
   kn: {
     cardSign:"ಪ್ರೀತಿ ಮತ್ತು ಆತ್ಮೀಯ ವಂದನೆಗಳೊಂದಿಗೆ, ಎರಡೂ ಕುಟುಂಬಗಳಿಂದ", dateCaps:"06 ಡಿಸೆಂಬರ್ 2026", thankYou:"ಧನ್ಯವಾದಗಳು", toTop:"ಮೇಲಕ್ಕೆ",
-    mantraEyebrow:"ಪವಿತ್ರ ಪ್ರತಿಜ್ಞೆ", mantraText:"ನನ್ನ ಜೀವನಕ್ಕೆ ಆಧಾರವಾದ ಈ ಮಂಗಳ ಸೂತ್ರದಿಂದ ನಿನ್ನನ್ನು ಬಂಧಿಸುತ್ತೇನೆ. ನೀನು ನೂರು ವರ್ಷ ಸುಖವಾಗಿ ಬಾಳು.",
+    mantraEyebrow:"ಮಂಗಳ ಆಶೀರ್ವಾದ", mantraText:"ನನ್ನ ಜೀವನಕ್ಕೆ ಆಧಾರವಾದ ಈ ಮಂಗಳ ಸೂತ್ರದಿಂದ ನಿನ್ನನ್ನು ಬಂಧಿಸುತ್ತೇನೆ. ನೀನು ನೂರು ವರ್ಷ ಸುಖವಾಗಿ ಬಾಳು.",
     shubha:"ಆರತಕ್ಷತೆ", scroll:"ಕೆಳಗೆ ಸರಿಸಿ", weddingEyebrow:"ಶುಭ ದಿನ", weddingHead:"ಆರತಕ್ಷತೆ ಸಮಾರಂಭ", dateDay:"ಭಾನುವಾರ", dateFull:"06 ಡಿಸೆಂಬರ್ 2026", timeNote:"ಭಾರತೀಯ ಕಾಲಮಾನ",
     sealHint:"ಆಹ್ವಾನ ತೆರೆಯಲು ಸ್ಪರ್ಶಿಸಿ", stackHint:"ಫೋಟೋವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಅಥವಾ ಸರಿಸಿ", prevPhoto:"ಹಿಂದಿನ ಫೋಟೋ", nextPhoto:"ಮುಂದಿನ ಫೋಟೋ", portraitEyebrow:"ವಧೂವರರು", mapNote:"ಚಿತ್ರಣ ಮಾತ್ರ · ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಲು ನಕ್ಷೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ",
     coverPre:"ಆರತಕ್ಷತೆ", openInvite:"ಆಹ್ವಾನ ತೆರೆಯಿರಿ", openQuiet:"ಸಂಗೀತವಿಲ್ಲದೆ ತೆರೆಯಿರಿ", music:"ಸಂಗೀತ",
