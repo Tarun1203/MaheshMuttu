@@ -389,3 +389,14 @@ body.kn .open-cta{font-family:var(--kn);letter-spacing:.02em;text-transform:none
 .ivory-card,.venue-box{position:relative}
 .ivory-card::after,.venue-box::after{content:"";position:absolute;right:-18px;bottom:-18px;width:clamp(110px,16vw,190px);aspect-ratio:1;background:url("assets/corner-flowers.svg") left bottom/contain no-repeat;transform:scaleX(-1);pointer-events:none;z-index:2}
 @media (max-width:600px){.portrait::before,.details::before,.stack-stick::before,.portrait::after,.details::after,.stack-stick::after{width:132px;opacity:.9}}
+
+/* corner alignment: flowers stay in the section corners, behind the content */
+.portrait>.inner,.details>.inner,.stack-stick>.inner{position:relative;z-index:1}
+.stack-stick::before,.stack-stick::after{content:none}
+.stack-sec{position:relative;overflow:hidden}
+.stack-sec::before,.stack-sec::after{content:"";position:absolute;width:clamp(120px,12vw,200px);aspect-ratio:1;pointer-events:none;z-index:0;background:url("assets/corner-flowers.svg") left bottom/contain no-repeat}
+.stack-sec::before{left:0;bottom:0}
+.stack-sec::after{right:0;top:0;transform:scale(-1,-1)}
+.stack-sec>*{position:relative;z-index:1}
+@media (min-width:900px){.stack-stick .inner{padding-inline:clamp(24px,6vw,120px)}}
+@media (max-width:600px){.stack-sec::before,.stack-sec::after{width:96px;opacity:.85}}
