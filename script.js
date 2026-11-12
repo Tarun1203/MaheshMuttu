@@ -10,7 +10,7 @@ const CONFIG = {
   // Also tried, in order, so a slightly different name or format still works:
   musicFallbacks: ["assets/music/wedding-music.mp3.mp3", "assets/music/wedding-music.m4a", "assets/music/wedding-music.wav", "assets/music/wedding-music.ogg", "assets/music/wedding-music.MP3", "assets/music/music.mp3", "assets/music/song.mp3"],
   // After you publish the site, paste its address here so WhatsApp shares include the link.
-  siteLink: ""
+  siteLink: "https://maheshmuttu.space"
 };
 const root = document.documentElement;
 root.classList.add("js");
