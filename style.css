@@ -350,3 +350,9 @@ main>section+section>.inner::before{content:none}
   .stack-stick .inner>.stack-hint{grid-area:6/1;margin-top:12px}
   .stack-stick .inner>.stack{grid-area:1/2/-1/3;width:min(42vw,calc(76vh * .7));width:min(42vw,calc(76svh * .7))}
 }
+
+/* ---- Bodoni's display cut has hair-thin strokes that many phones drop at large sizes
+        (the "t" crossbars and the left stroke of "M" vanish). Use the sturdier text cut everywhere. ---- */
+.names,.portrait-names,.cn,.ph span,.title,.info-main,.foot-thanks,.done,.portrait-date,.flip b,.cn-amp,.names .amp,.portrait-names .amp{font-optical-sizing:none;font-variation-settings:"opsz" 11}
+.names,.portrait-names,.cn,.ph span{font-weight:500}
+.seal text{font-variation-settings:"opsz" 11;font-weight:600}
