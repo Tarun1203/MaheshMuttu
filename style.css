@@ -557,3 +557,40 @@ body.kn .stack-hint{font-family:var(--kn);letter-spacing:.02em;text-transform:no
   .scroll-cue i{height:22px}
   .hero{padding-bottom:78px}
 }
+
+/* ================= Editorial ivory sections (alternate with the maroon ones) ================= */
+.details,.stack-sec{color:var(--ink);background:
+  radial-gradient(ellipse 80% 60% at 50% 35%,#FFFDF6,transparent 75%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23B98835' stroke-opacity='.10'%3E%3Cpath d='M32 6c6 8 6 18 0 26-6-8-6-18 0-26zM32 58c6-8 6-18 0-26-6 8-6 18 0 26zM6 32c8-6 18-6 26 0-8 6-18 6-26 0zM58 32c-8-6-18-6-26 0 8 6 18 6 26 0z'/%3E%3C/g%3E%3C/svg%3E") 0 0/64px 64px,
+  linear-gradient(180deg,#FBF2DF,#F3E6CB)}
+.details .label,.stack-sec .label{color:#8A5D22}
+.details .title.foil,.stack-sec .title.foil{background:none;-webkit-text-fill-color:var(--maroon);color:var(--maroon)}
+.details .divider,.stack-sec .feather{color:#B98835}
+
+/* wedding details: three open columns with thin gold rules instead of boxes */
+.details .cards{gap:0;max-width:980px;margin:34px auto 0;border-top:1px solid rgba(185,136,53,.55);border-bottom:1px solid rgba(185,136,53,.55)}
+.details .info{background:none;border:0;box-shadow:none;padding:34px 22px 32px}
+.details .info::before,.details .info::after{display:none}
+.details .tilt+.tilt .info{border-left:1px solid rgba(185,136,53,.45)}
+.details .medal{position:static;translate:none;transform:none;width:46px;height:46px;margin:0 auto 14px;background:none;color:#B98835;box-shadow:inset 0 0 0 1px rgba(185,136,53,.7)}
+.details .medal svg{width:22px;height:22px}
+.details .info-main{color:var(--maroon);font-size:clamp(1.7rem,3.2vw,2.3rem)}
+.details .info-sub{color:#5A443A}
+.details .glare{display:none}
+@media (max-width:820px){
+  .details .cards{max-width:420px;gap:0;margin-top:30px}
+  .details .tilt+.tilt .info{border-left:0;border-top:1px solid rgba(185,136,53,.45)}
+}
+
+/* countdown as the highlight: large flip cards straight on the paper */
+.details .countdown{margin-top:64px}
+.details .tile{background:none;border:0;box-shadow:none;padding:0;min-width:0}
+.details .flip{--fh:clamp(78px,17vw,132px);width:clamp(66px,15vw,116px)}
+.details .tile span{margin-top:14px;font-size:.68rem;color:#8A5D22}
+.details .count{gap:clamp(10px,2.6vw,28px)}
+.details .done{background:none;-webkit-text-fill-color:var(--maroon);color:var(--maroon)}
+
+/* gallery on paper */
+.stack-sec .pcard{background:linear-gradient(180deg,#FFFFFF,#FBF4E4);border-color:#C9A35A}
+.stack-sec .stack-hint{color:#8A5D22}
+.stack-sec .stack-hint::after{background:linear-gradient(#B98835,transparent)}
