@@ -130,18 +130,36 @@ function drawQR() {
 }
 if (window.QRCode) drawQR(); else window.addEventListener("load", drawQR, { once: true });
 
-/* Photos: shown when the file exists (any common format: jpg, jpeg, png, webp) */
-document.querySelectorAll("img.photo").forEach(img => {
-  const base = img.dataset.src.replace(/\.[a-z0-9]+$/i, "");
+/* Photos: shown when the file exists (any common format: jpg, jpeg, png, webp).
+   The portrait falls back to couple-1 when there is no portrait file.
+   Photo-stack cards with no photo are removed, so the stack shows exactly the photos that exist. */
+(function () {
   const exts = ["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG", "WEBP"];
-  (function tryNext(i) {
-    if (i >= exts.length) return;
-    const probe = new Image();
-    probe.onload = () => { img.src = probe.src; img.classList.add("loaded"); };
-    probe.onerror = () => tryNext(i + 1);
-    probe.src = `${base}.${exts[i]}`;
-  })(0);
-});
+  function load(img) {
+    return new Promise(done => {
+      const bases = [img.dataset.src, img.dataset.fallback].filter(Boolean).map(b => b.replace(/\.[a-z0-9]+$/i, ""));
+      (function tryNext(k) {
+        if (k >= bases.length * exts.length) return done(false);
+        const probe = new Image();
+        probe.onload = () => { img.src = probe.src; img.classList.add("loaded"); done(true); };
+        probe.onerror = () => tryNext(k + 1);
+        probe.src = `${bases[Math.floor(k / exts.length)]}.${exts[k % exts.length]}`;
+      })(0);
+    });
+  }
+  const imgs = [...document.querySelectorAll("img.photo")];
+  const results = imgs.map(load);
+  const stackImgs = imgs.filter(i => i.closest(".pcard"));
+  Promise.all(stackImgs.map(i => results[imgs.indexOf(i)])).then(ok => {
+    const sec = document.querySelector(".stack-sec"); if (!sec) return;
+    const found = ok.filter(Boolean).length;
+    stackImgs.forEach((img, i) => { if (found ? !ok[i] : i >= 5) img.closest(".pcard").remove(); });   // no photos yet: keep 5 placeholders
+    const cards = [...sec.querySelectorAll(".pcard")];
+    cards.forEach((c, i) => { c.style.setProperty("--i", i); c.querySelector("figcaption").textContent = `${String(i + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`; });
+    sec.style.setProperty("--n", cards.length);
+    window.dispatchEvent(new Event("resize"));
+  });
+})();
 
 /* Gold dust on the cover and hero */
 document.querySelectorAll("canvas.dust").forEach(c => {
@@ -244,12 +262,12 @@ document.querySelectorAll("canvas.petals").forEach(c => {
 /* Photo stack: as the guest scrolls, the top photo is dragged off to one side and the next comes forward */
 (function () {
   const sec = document.querySelector(".stack-sec"); if (!sec) return;
-  const cards = [...sec.querySelectorAll(".pcard")], n = cards.length;
   if (reduceMotion) { sec.classList.add("stack-static"); return; }
   const tilt = [-4, 3, -2, 4, -3];
   let ticking = false;
   function update() {
     ticking = false;
+    const cards = [...sec.querySelectorAll(".pcard")], n = cards.length;
     const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
     const p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
     const f = p * (n - 1);                                   // how many cards have been dragged away

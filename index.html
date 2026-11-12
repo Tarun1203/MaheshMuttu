@@ -168,7 +168,7 @@
       <p class="portrait-date reveal">06 · 12 · 26</p>
       <figure class="portrait-frame reveal">
         <!-- Couple portrait / illustration: put portrait.png (or .jpg / .webp) in assets/images/ -->
-        <img class="photo portrait-img" data-src="assets/images/portrait.png" alt="Portrait of Mahesh and Muttu">
+        <img class="photo portrait-img" data-src="assets/images/portrait.png" data-fallback="assets/images/couple-1.jpg" alt="Portrait of Mahesh and Muttu">
         <div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div>
       </figure>
       <h2 class="portrait-names reveal" id="portraitHead"><span data-i18n="groom">Mahesh</span><span class="amp">&amp;</span><span data-i18n="bride">Muttu</span></h2>
@@ -315,19 +315,24 @@
   </section>
 
   <!-- 5 · Photos: a stack of cards that slide away as guests scroll -->
-  <section class="royal moments stack-sec" id="story" style="--n:5">
+  <section class="royal moments stack-sec" id="story" style="--n:10">
     <div class="stack-stick">
       <div class="inner">
         <p class="label" data-i18n="storyEyebrow">Our Story</p>
         <h2 class="title foil" data-i18n="momentsHead">Our Favourite Moments</h2>
         <svg class="feather" aria-hidden="true"><use href="#feather"/></svg>
-        <!-- Photos: put couple-1 … couple-5 (.jpg / .png / .webp) in assets/images/ -->
+        <!-- Photos: put couple-1 … couple-10 (.jpg / .jpeg / .png / .webp); empty slots are removed automatically in assets/images/ -->
         <div class="stack" id="photoStack">
-          <figure class="pcard" style="--i:0"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-1.jpg" alt="Mahesh and Muttu, photo 1"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>01 / 05</figcaption></figure>
-          <figure class="pcard" style="--i:1"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-2.jpg" alt="Mahesh and Muttu, photo 2"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>02 / 05</figcaption></figure>
-          <figure class="pcard" style="--i:2"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-3.jpg" alt="Mahesh and Muttu, photo 3"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>03 / 05</figcaption></figure>
-          <figure class="pcard" style="--i:3"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-4.jpg" alt="Mahesh and Muttu, photo 4"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>04 / 05</figcaption></figure>
-          <figure class="pcard" style="--i:4"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-5.jpg" alt="Mahesh and Muttu, photo 5"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>05 / 05</figcaption></figure>
+          <figure class="pcard" style="--i:0"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-1.jpg" alt="Mahesh and Muttu, photo 1"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>01 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:1"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-2.jpg" alt="Mahesh and Muttu, photo 2"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>02 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:2"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-3.jpg" alt="Mahesh and Muttu, photo 3"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>03 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:3"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-4.jpg" alt="Mahesh and Muttu, photo 4"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>04 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:4"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-5.jpg" alt="Mahesh and Muttu, photo 5"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>05 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:5"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-6.jpg" alt="Mahesh and Muttu, photo 6"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>06 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:6"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-7.jpg" alt="Mahesh and Muttu, photo 7"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>07 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:7"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-8.jpg" alt="Mahesh and Muttu, photo 8"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>08 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:8"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-9.jpg" alt="Mahesh and Muttu, photo 9"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>09 / 10</figcaption></figure>
+          <figure class="pcard" style="--i:9"><div class="pcard-img"><img class="photo" data-src="assets/images/couple-10.jpg" alt="Mahesh and Muttu, photo 10"><div class="ph" aria-hidden="true"><span data-i18n="groom">Mahesh</span><i>&amp;</i><span data-i18n="bride">Muttu</span></div></div><figcaption>10 / 10</figcaption></figure>
         </div>
         <p class="stack-hint" data-i18n="stackHint">Keep scrolling to turn the photos</p>
       </div>
