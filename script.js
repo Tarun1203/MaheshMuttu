@@ -1,4 +1,4 @@
-/* Mahesh & Muttu — wedding invitation
+/* Mahesh & Muttu — wedding reception invitation
    Everything you may want to change is in CONFIG below. */
 const CONFIG = {
   muhurthamIST: { y: 2026, m: 12, d: 6, h: 11, min: 2 },   // Sunday, 06 December 2026, 11:02 AM IST
@@ -21,16 +21,16 @@ const T = {
   en: {
     cardSign:"With love and warm regards, from both families", dateCaps:"06 December 2026", thankYou:"Thank You", toTop:"Back to top",
     mantraEyebrow:"The Sacred Vow", mantraText:"With this sacred thread, so dear to my life, I tie the bond of marriage. May you live a hundred blessed autumns.",
-    shubha:"Shubha Vivaha", scroll:"Scroll", weddingEyebrow:"The Auspicious Day", weddingHead:"Our Wedding Day", dateDay:"Sunday", dateFull:"06 December 2026", timeNote:"Indian Standard Time",
+    shubha:"Wedding Reception", scroll:"Scroll", weddingEyebrow:"The Celebration", weddingHead:"Our Reception Day", dateDay:"Sunday", dateFull:"06 December 2026", timeNote:"Indian Standard Time",
     sealHint:"Tap to open the invitation", stackHint:"Tap or swipe the photo", prevPhoto:"Previous photo", nextPhoto:"Next photo", portraitEyebrow:"The Couple", mapNote:"Illustration, not to scale · tap the map to open Google Maps",
-    coverPre:"The wedding of", openInvite:"Open Invitation", openQuiet:"Open without music", music:"Music",
+    coverPre:"The wedding reception of", openInvite:"Open Invitation", openQuiet:"Open without music", music:"Music",
     groom:"Mahesh", bride:"Muttu",
-    blessing:"With the blessings of our beloved family and elders", inviteLine:"We joyfully invite you to the wedding of",
-    dateLabel:"Date", muhurthamLabel:"Muhurtham", venueLabel:"Venue", dateLong:"Sunday, 06 December 2026", timeFull:"11:02 AM",
-    countHead:"Counting down to the Muhurtham", days:"Days", hours:"Hours", minutes:"Minutes", seconds:"Seconds",
-    married:"Happily married",
+    blessing:"With the blessings of our beloved family and elders", inviteLine:"We joyfully invite you to the wedding reception of",
+    dateLabel:"Date", muhurthamLabel:"Reception Time", venueLabel:"Venue", dateLong:"Sunday, 06 December 2026", timeFull:"11:02 AM",
+    countHead:"Counting down to the Reception", days:"Days", hours:"Hours", minutes:"Minutes", seconds:"Seconds",
+    married:"Thank you for celebrating with us",
     introEyebrow:"A Beautiful Beginning", introHead:"Two hearts. One journey.",
-    introText:"With the blessings of our beloved family and elders, we joyfully invite you to be part of the wedding celebration of Mahesh & Muttu. Your presence and blessings will make this special day even more meaningful.",
+    introText:"With the blessings of our beloved family and elders, we joyfully invite you to the wedding reception of Mahesh & Muttu. Your presence and blessings will make this special day even more meaningful.",
     venueEyebrow:"The Venue", scanLoc:"Scan for location", openLocation:"Open Location", addCal:"Add to Google Calendar", addIcs:"Apple / Outlook calendar",
     storyEyebrow:"Our Story", momentsHead:"Our Favourite Moments",
     blessHead:"Your Presence Means Everything",
@@ -40,17 +40,17 @@ const T = {
   kn: {
     cardSign:"ಪ್ರೀತಿ ಮತ್ತು ಆತ್ಮೀಯ ವಂದನೆಗಳೊಂದಿಗೆ, ಎರಡೂ ಕುಟುಂಬಗಳಿಂದ", dateCaps:"06 ಡಿಸೆಂಬರ್ 2026", thankYou:"ಧನ್ಯವಾದಗಳು", toTop:"ಮೇಲಕ್ಕೆ",
     mantraEyebrow:"ಪವಿತ್ರ ಪ್ರತಿಜ್ಞೆ", mantraText:"ನನ್ನ ಜೀವನಕ್ಕೆ ಆಧಾರವಾದ ಈ ಮಂಗಳ ಸೂತ್ರದಿಂದ ನಿನ್ನನ್ನು ಬಂಧಿಸುತ್ತೇನೆ. ನೀನು ನೂರು ವರ್ಷ ಸುಖವಾಗಿ ಬಾಳು.",
-    shubha:"ಶುಭ ವಿವಾಹ", scroll:"ಕೆಳಗೆ ಸರಿಸಿ", weddingEyebrow:"ಶುಭ ದಿನ", weddingHead:"ನಮ್ಮ ವಿವಾಹ ದಿನ", dateDay:"ಭಾನುವಾರ", dateFull:"06 ಡಿಸೆಂಬರ್ 2026", timeNote:"ಭಾರತೀಯ ಕಾಲಮಾನ",
+    shubha:"ಆರತಕ್ಷತೆ", scroll:"ಕೆಳಗೆ ಸರಿಸಿ", weddingEyebrow:"ಶುಭ ದಿನ", weddingHead:"ಆರತಕ್ಷತೆ ಸಮಾರಂಭ", dateDay:"ಭಾನುವಾರ", dateFull:"06 ಡಿಸೆಂಬರ್ 2026", timeNote:"ಭಾರತೀಯ ಕಾಲಮಾನ",
     sealHint:"ಆಹ್ವಾನ ತೆರೆಯಲು ಸ್ಪರ್ಶಿಸಿ", stackHint:"ಫೋಟೋವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಅಥವಾ ಸರಿಸಿ", prevPhoto:"ಹಿಂದಿನ ಫೋಟೋ", nextPhoto:"ಮುಂದಿನ ಫೋಟೋ", portraitEyebrow:"ವಧೂವರರು", mapNote:"ಚಿತ್ರಣ ಮಾತ್ರ · ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಲು ನಕ್ಷೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ",
-    coverPre:"ಶುಭ ವಿವಾಹ", openInvite:"ಆಹ್ವಾನ ತೆರೆಯಿರಿ", openQuiet:"ಸಂಗೀತವಿಲ್ಲದೆ ತೆರೆಯಿರಿ", music:"ಸಂಗೀತ",
+    coverPre:"ಆರತಕ್ಷತೆ", openInvite:"ಆಹ್ವಾನ ತೆರೆಯಿರಿ", openQuiet:"ಸಂಗೀತವಿಲ್ಲದೆ ತೆರೆಯಿರಿ", music:"ಸಂಗೀತ",
     groom:"ಮಹೇಶ್", bride:"ಮುತ್ತು",
-    blessing:"ನಮ್ಮ ಪ್ರೀತಿಯ ಕುಟುಂಬ ಮತ್ತು ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ", inviteLine:"ಇವರ ಶುಭ ವಿವಾಹಕ್ಕೆ ತಮ್ಮನ್ನು ಸಂತೋಷದಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ",
-    dateLabel:"ದಿನಾಂಕ", muhurthamLabel:"ಮುಹೂರ್ತ", venueLabel:"ಸ್ಥಳ", dateLong:"ಭಾನುವಾರ, 06 ಡಿಸೆಂಬರ್ 2026", timeFull:"ಬೆಳಿಗ್ಗೆ 11:02",
-    countHead:"ಶುಭ ಮುಹೂರ್ತಕ್ಕೆ ಇನ್ನು", days:"ದಿನಗಳು", hours:"ಗಂಟೆಗಳು", minutes:"ನಿಮಿಷಗಳು", seconds:"ಸೆಕೆಂಡುಗಳು",
-    married:"ಶುಭ ವಿವಾಹ ಸಂಪನ್ನವಾಯಿತು",
+    blessing:"ನಮ್ಮ ಪ್ರೀತಿಯ ಕುಟುಂಬ ಮತ್ತು ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ", inviteLine:"ಇವರ ಆರತಕ್ಷತೆ ಸಮಾರಂಭಕ್ಕೆ ತಮ್ಮನ್ನು ಸಂತೋಷದಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ",
+    dateLabel:"ದಿನಾಂಕ", muhurthamLabel:"ಆರತಕ್ಷತೆ ಸಮಯ", venueLabel:"ಸ್ಥಳ", dateLong:"ಭಾನುವಾರ, 06 ಡಿಸೆಂಬರ್ 2026", timeFull:"ಬೆಳಿಗ್ಗೆ 11:02",
+    countHead:"ಆರತಕ್ಷತೆಗೆ ಇನ್ನು", days:"ದಿನಗಳು", hours:"ಗಂಟೆಗಳು", minutes:"ನಿಮಿಷಗಳು", seconds:"ಸೆಕೆಂಡುಗಳು",
+    married:"ನಮ್ಮೊಂದಿಗೆ ಸಂಭ್ರಮಿಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು",
     introEyebrow:"ಸುಂದರ ಆರಂಭ", introHead:"ಎರಡು ಹೃದಯಗಳು. ಒಂದೇ ಪಯಣ.",
-    introText:"ನಮ್ಮ ಪ್ರೀತಿಯ ಕುಟುಂಬ ಮತ್ತು ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ, ಮಹೇಶ್ ಮತ್ತು ಮುತ್ತು ಅವರ ವಿವಾಹ ಮಹೋತ್ಸವದಲ್ಲಿ ಪಾಲ್ಗೊಳ್ಳಲು ತಮ್ಮನ್ನು ಸಂತೋಷದಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ತಮ್ಮ ಉಪಸ್ಥಿತಿ ಮತ್ತು ಆಶೀರ್ವಾದ ಈ ವಿಶೇಷ ದಿನವನ್ನು ಇನ್ನಷ್ಟು ಅರ್ಥಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ.",
-    venueEyebrow:"ವಿವಾಹ ಸ್ಥಳ", scanLoc:"ಸ್ಥಳಕ್ಕಾಗಿ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ", openLocation:"ಸ್ಥಳ ತೆರೆಯಿರಿ", addCal:"ಗೂಗಲ್ ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ", addIcs:"ಆಪಲ್ / ಔಟ್‌ಲುಕ್ ಕ್ಯಾಲೆಂಡರ್",
+    introText:"ನಮ್ಮ ಪ್ರೀತಿಯ ಕುಟುಂಬ ಮತ್ತು ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ, ಮಹೇಶ್ ಮತ್ತು ಮುತ್ತು ಅವರ ಆರತಕ್ಷತೆ ಸಮಾರಂಭದಲ್ಲಿ ಪಾಲ್ಗೊಳ್ಳಲು ತಮ್ಮನ್ನು ಸಂತೋಷದಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ತಮ್ಮ ಉಪಸ್ಥಿತಿ ಮತ್ತು ಆಶೀರ್ವಾದ ಈ ವಿಶೇಷ ದಿನವನ್ನು ಇನ್ನಷ್ಟು ಅರ್ಥಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ.",
+    venueEyebrow:"ಸಮಾರಂಭ ಸ್ಥಳ", scanLoc:"ಸ್ಥಳಕ್ಕಾಗಿ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ", openLocation:"ಸ್ಥಳ ತೆರೆಯಿರಿ", addCal:"ಗೂಗಲ್ ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ", addIcs:"ಆಪಲ್ / ಔಟ್‌ಲುಕ್ ಕ್ಯಾಲೆಂಡರ್",
     storyEyebrow:"ನಮ್ಮ ಕಥೆ", momentsHead:"ನಮ್ಮ ಮೆಚ್ಚಿನ ಕ್ಷಣಗಳು",
     blessHead:"ತಮ್ಮ ಉಪಸ್ಥಿತಿಯೇ ನಮಗೆ ಎಲ್ಲವೂ",
     blessText:"ಈ ಸುಂದರ ಸಂದರ್ಭವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಆಚರಿಸಿ, ಹೊಸ ಪಯಣ ಆರಂಭಿಸುತ್ತಿರುವ ಮಹೇಶ್ ಮತ್ತು ಮುತ್ತು ಅವರನ್ನು ಆಶೀರ್ವದಿಸಬೇಕೆಂದು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ.",
@@ -60,8 +60,8 @@ const T = {
 let lang = "en";
 try { if (localStorage.getItem("mm-lang") === "kn") lang = "kn"; } catch (e) {}
 function shareText() {
-  const en = `Wedding Invitation 🌸\nMahesh & Muttu\n📅 Sunday, 06 December 2026\n🕚 Muhurtham 11:02 AM\n📍 ${CONFIG.venue}\nMap: ${CONFIG.mapLink}`;
-  const kn = `ಶುಭ ವಿವಾಹ ಆಹ್ವಾನ 🌸\nಮಹೇಶ್ ಮತ್ತು ಮುತ್ತು\n📅 ಭಾನುವಾರ, 06 ಡಿಸೆಂಬರ್ 2026\n🕚 ಮುಹೂರ್ತ ಬೆಳಿಗ್ಗೆ 11:02\n📍 ${CONFIG.venue}\nನಕ್ಷೆ: ${CONFIG.mapLink}`;
+  const en = `Wedding Reception Invitation 🌸\nMahesh & Muttu\n📅 Sunday, 06 December 2026\n🕚 11:02 AM\n📍 ${CONFIG.venue}\nMap: ${CONFIG.mapLink}`;
+  const kn = `ಆರತಕ್ಷತೆ ಆಹ್ವಾನ 🌸\nಮಹೇಶ್ ಮತ್ತು ಮುತ್ತು\n📅 ಭಾನುವಾರ, 06 ಡಿಸೆಂಬರ್ 2026\n🕚 ಬೆಳಿಗ್ಗೆ 11:02\n📍 ${CONFIG.venue}\nನಕ್ಷೆ: ${CONFIG.mapLink}`;
   return (lang === "kn" ? kn : en) + (CONFIG.siteLink ? `\n\n${CONFIG.siteLink}` : "");
 }
 function applyLanguage() {
@@ -95,8 +95,8 @@ const startUTC = Date.UTC(M.y, M.m - 1, M.d, M.h, M.min) - 330 * 60000;
 const endUTC = startUTC + CONFIG.calendarHours * 3600000;
 (function () {
   const iso = ms => new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-  const q = new URLSearchParams({ action: "TEMPLATE", text: "Wedding of Mahesh & Muttu", dates: `${iso(startUTC)}/${iso(endUTC)}`,
-    details: `Muhurtham 11:02 AM. Map: ${CONFIG.mapLink}` + (CONFIG.siteLink ? `\n${CONFIG.siteLink}` : ""), location: CONFIG.venue, ctz: "Asia/Kolkata" });
+  const q = new URLSearchParams({ action: "TEMPLATE", text: "Wedding Reception of Mahesh & Muttu", dates: `${iso(startUTC)}/${iso(endUTC)}`,
+    details: `Reception 11:02 AM. Map: ${CONFIG.mapLink}` + (CONFIG.siteLink ? `\n${CONFIG.siteLink}` : ""), location: CONFIG.venue, ctz: "Asia/Kolkata" });
   $("calBtn").href = "https://calendar.google.com/calendar/render?" + q.toString();
 })();
 /* Flip-card digits: the old number folds down to reveal the new one */
