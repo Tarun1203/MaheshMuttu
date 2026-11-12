@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@400;500;600&family=Noto+Serif+Kannada:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap">
-<link rel="stylesheet" href="style.css?v=20261112s">
+<link rel="stylesheet" href="style.css?v=20261112t">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 <!--HEAD-END-->
 </head>
@@ -109,7 +109,6 @@
       <p class="label" data-i18n="shubha">Shubha Vivaha</p>
       <h1 class="names foil shine" id="coverNames"><span data-i18n="groom">Mahesh</span><span class="amp">&amp;</span><span data-i18n="bride">Muttu</span></h1>
       <span class="rule" aria-hidden="true"></span>
-      <p class="date-band" data-i18n="dateCaps">06 December 2026</p>
       <button class="seal" id="openInvite" type="button" aria-label="Open invitation">
         <svg viewBox="0 0 200 230" aria-hidden="true">
           <defs>
@@ -132,7 +131,10 @@
           <ellipse cx="72" cy="58" rx="22" ry="10" fill="#FFF6DA" opacity=".35" transform="rotate(-30 72 58)"/>
         </svg>
       </button>
-      <p class="seal-hint"><span aria-hidden="true">♪</span> <span data-i18n="sealHint">Tap the seal to open</span></p>
+      <button class="open-cta" id="openCta" type="button">
+        <svg class="tap-hand" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5V4.5a1.5 1.5 0 0 1 3 0V10m0-1a1.5 1.5 0 0 1 3 0v4.5c0 3.6-2.4 6.5-6 6.5h-.6c-2 0-3.4-.8-4.6-2.3L4.2 14.5a1.6 1.6 0 0 1 2.4-2.1L9 14.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="sealHint">Tap to open the invitation</span>
+      </button>
       <button class="quiet" id="openQuiet" type="button" data-i18n="openQuiet">Open without music</button>
     </div>
   </div>
@@ -357,7 +359,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20261112s" defer></script>
+<script src="script.js?v=20261112t" defer></script>
 <!--BODY-END-->
 </body>
 </html>

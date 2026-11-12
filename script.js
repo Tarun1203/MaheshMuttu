@@ -22,7 +22,7 @@ const T = {
     cardSign:"With love and warm regards, from both families", dateCaps:"06 December 2026", thankYou:"Thank You", toTop:"Back to top",
     mantraEyebrow:"The Sacred Vow", mantraText:"With this sacred thread, so dear to my life, I tie the bond of marriage. May you live a hundred blessed autumns.",
     shubha:"Shubha Vivaha", scroll:"Scroll", weddingEyebrow:"The Auspicious Day", weddingHead:"Our Wedding Day", dateDay:"Sunday", dateFull:"06 December 2026", timeNote:"Indian Standard Time",
-    sealHint:"Tap the seal to open", stackHint:"Tap or swipe the photo", prevPhoto:"Previous photo", nextPhoto:"Next photo", portraitEyebrow:"The Couple", mapNote:"Illustration, not to scale · tap the map to open Google Maps",
+    sealHint:"Tap to open the invitation", stackHint:"Tap or swipe the photo", prevPhoto:"Previous photo", nextPhoto:"Next photo", portraitEyebrow:"The Couple", mapNote:"Illustration, not to scale · tap the map to open Google Maps",
     coverPre:"The wedding of", openInvite:"Open Invitation", openQuiet:"Open without music", music:"Music",
     groom:"Mahesh", bride:"Muttu",
     blessing:"With the blessings of our beloved family and elders", inviteLine:"We joyfully invite you to the wedding of",
@@ -41,7 +41,7 @@ const T = {
     cardSign:"ಪ್ರೀತಿ ಮತ್ತು ಆತ್ಮೀಯ ವಂದನೆಗಳೊಂದಿಗೆ, ಎರಡೂ ಕುಟುಂಬಗಳಿಂದ", dateCaps:"06 ಡಿಸೆಂಬರ್ 2026", thankYou:"ಧನ್ಯವಾದಗಳು", toTop:"ಮೇಲಕ್ಕೆ",
     mantraEyebrow:"ಪವಿತ್ರ ಪ್ರತಿಜ್ಞೆ", mantraText:"ನನ್ನ ಜೀವನಕ್ಕೆ ಆಧಾರವಾದ ಈ ಮಂಗಳ ಸೂತ್ರದಿಂದ ನಿನ್ನನ್ನು ಬಂಧಿಸುತ್ತೇನೆ. ನೀನು ನೂರು ವರ್ಷ ಸುಖವಾಗಿ ಬಾಳು.",
     shubha:"ಶುಭ ವಿವಾಹ", scroll:"ಕೆಳಗೆ ಸರಿಸಿ", weddingEyebrow:"ಶುಭ ದಿನ", weddingHead:"ನಮ್ಮ ವಿವಾಹ ದಿನ", dateDay:"ಭಾನುವಾರ", dateFull:"06 ಡಿಸೆಂಬರ್ 2026", timeNote:"ಭಾರತೀಯ ಕಾಲಮಾನ",
-    sealHint:"ತೆರೆಯಲು ಮುದ್ರೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ", stackHint:"ಫೋಟೋವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಅಥವಾ ಸರಿಸಿ", prevPhoto:"ಹಿಂದಿನ ಫೋಟೋ", nextPhoto:"ಮುಂದಿನ ಫೋಟೋ", portraitEyebrow:"ವಧೂವರರು", mapNote:"ಚಿತ್ರಣ ಮಾತ್ರ · ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಲು ನಕ್ಷೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ",
+    sealHint:"ಆಹ್ವಾನ ತೆರೆಯಲು ಸ್ಪರ್ಶಿಸಿ", stackHint:"ಫೋಟೋವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಅಥವಾ ಸರಿಸಿ", prevPhoto:"ಹಿಂದಿನ ಫೋಟೋ", nextPhoto:"ಮುಂದಿನ ಫೋಟೋ", portraitEyebrow:"ವಧೂವರರು", mapNote:"ಚಿತ್ರಣ ಮಾತ್ರ · ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಲು ನಕ್ಷೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ",
     coverPre:"ಶುಭ ವಿವಾಹ", openInvite:"ಆಹ್ವಾನ ತೆರೆಯಿರಿ", openQuiet:"ಸಂಗೀತವಿಲ್ಲದೆ ತೆರೆಯಿರಿ", music:"ಸಂಗೀತ",
     groom:"ಮಹೇಶ್", bride:"ಮುತ್ತು",
     blessing:"ನಮ್ಮ ಪ್ರೀತಿಯ ಕುಟುಂಬ ಮತ್ತು ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ", inviteLine:"ಇವರ ಶುಭ ವಿವಾಹಕ್ಕೆ ತಮ್ಮನ್ನು ಸಂತೋಷದಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ",
@@ -444,5 +444,8 @@ $("musicBtn").addEventListener("click", async () => { await Music.toggle(); upda
     setTimeout(() => { cover.hidden = true; }, wait + (reduceMotion ? 0 : 2000));
   }
   $("openInvite").addEventListener("click", () => open(true));
+  $("openCta").addEventListener("click", () => open(true));
+  // a tap anywhere on the cover opens it too (except "Open without music")
+  cover.addEventListener("click", e => { if (!e.target.closest("#openQuiet, #openInvite, #openCta")) open(true); });
   $("openQuiet").addEventListener("click", () => open(false));
 })();

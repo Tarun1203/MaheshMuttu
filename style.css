@@ -356,3 +356,29 @@ main>section+section>.inner::before{content:none}
 .names,.portrait-names,.cn,.ph span,.title,.info-main,.foot-thanks,.done,.portrait-date,.flip b,.cn-amp,.names .amp,.portrait-names .amp{font-optical-sizing:none;font-variation-settings:"opsz" 11}
 .names,.portrait-names,.cn,.ph span{font-weight:500}
 .seal text{font-variation-settings:"opsz" 11;font-weight:600}
+
+/* ---------- Cover: make "tap to open" impossible to miss ---------- */
+.cover{cursor:pointer}
+.cover .rule{margin-bottom:30px}
+.seal{position:relative;width:clamp(140px,34vw,176px);animation:sealBob 2.6s ease-in-out infinite}
+.seal::before,.seal::after{content:"";position:absolute;left:50%;top:43%;width:84%;aspect-ratio:1;border-radius:50%;translate:-50% -50%;border:2px solid var(--gold-soft);opacity:0;pointer-events:none;animation:sealRing 2.4s ease-out infinite}
+.seal::after{animation-delay:1.2s}
+@keyframes sealRing{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.55);opacity:0}}
+@keyframes sealBob{50%{transform:translateY(-6px)}}
+.seal svg{filter:drop-shadow(0 12px 16px rgba(0,0,0,.4)) drop-shadow(0 0 18px rgba(231,200,120,.35))}
+.open-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;min-height:50px;padding:12px 24px;border-radius:999px;cursor:pointer;
+  font-family:var(--sans);font-weight:600;font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;color:var(--wine);
+  background:linear-gradient(180deg,#F3DA97,var(--gold));border:0;box-shadow:0 0 0 0 rgba(231,200,120,.6);animation:ctaPulse 2.4s ease-out infinite}
+.open-cta:hover{background:var(--gold-soft)}
+.tap-hand{width:22px;height:22px;flex:none;animation:tapHand 1.2s ease-in-out infinite}
+@keyframes ctaPulse{0%{box-shadow:0 0 0 0 rgba(231,200,120,.55)}70%,100%{box-shadow:0 0 0 16px rgba(231,200,120,0)}}
+@keyframes tapHand{0%,100%{transform:translateY(0)}45%{transform:translateY(3px) scale(.92)}}
+body.kn .open-cta{font-family:var(--kn);letter-spacing:.02em;text-transform:none;font-size:.95rem}
+.cover.breaking .open-cta,.cover.breaking .seal::before,.cover.breaking .seal::after{opacity:0;animation:none;transition:opacity .3s}
+.cover.breaking .seal{animation:none}
+.quiet{margin-top:12px}
+@media (prefers-reduced-motion:reduce){.seal,.seal::before,.seal::after,.open-cta,.tap-hand{animation:none}}
+/* keep the fade-in on the seal and button, then start their pulse */
+.cover-in>.seal{animation:rise 1.6s var(--ease) 1.2s forwards,sealBob 2.6s ease-in-out 2.8s infinite}
+.cover-in>.open-cta{animation:rise 1.6s var(--ease) 1.6s forwards,ctaPulse 2.4s ease-out 3.2s infinite}
+.cover-in>.quiet{animation-delay:2.1s}
