@@ -537,3 +537,23 @@ body.kn .stack-hint{font-family:var(--kn);letter-spacing:.02em;text-transform:no
   .pcard{padding:14px 14px 44px}
   .pcard figcaption{bottom:14px;font-size:.74rem}
 }
+
+/* ---- wide screens: the garlands sit in the corners, so the centred text needs no extra top space;
+        sizes follow the screen height so the whole opening fits in one view ---- */
+@media (min-width:900px){
+  .hero{padding-top:64px;padding-bottom:96px}
+  .names.huge{font-size:min(8.4rem,15vw,15vh);font-size:min(8.4rem,15vw,15svh)}
+  body.kn .names.huge{font-size:min(5.6rem,11vw,11vh);font-size:min(5.6rem,11vw,11svh)}
+  .hero .divider{margin:12px auto}
+  .ribbon{margin-top:18px}
+  .cover-box{padding-top:40px;padding-bottom:40px;min-height:0}
+  .cover .names{font-size:min(6rem,12vw,12vh);font-size:min(6rem,12vw,12svh)}
+  .cover .seal{width:min(168px,20vh);width:min(168px,20svh)}
+  .finale{padding-top:72px;padding-bottom:72px}
+  .finale .names{font-size:min(5rem,10vw,11vh);font-size:min(5rem,10vw,11svh)}
+  .thanks-script{font-size:min(6rem,11vw,13vh);font-size:min(6rem,11vw,13svh)}
+}
+@media (min-width:900px) and (max-height:760px){
+  .scroll-cue i{height:22px}
+  .hero{padding-bottom:78px}
+}
