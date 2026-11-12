@@ -22,7 +22,7 @@ const T = {
     cardSign:"With love and warm regards, from both families", dateCaps:"06 December 2026", thankYou:"Thank You", toTop:"Back to top",
     mantraEyebrow:"The Sacred Vow", mantraText:"With this sacred thread, so dear to my life, I tie the bond of marriage. May you live a hundred blessed autumns.",
     shubha:"Shubha Vivaha", scroll:"Scroll", weddingEyebrow:"The Auspicious Day", weddingHead:"Our Wedding Day", dateDay:"Sunday", dateFull:"06 December 2026", timeNote:"Indian Standard Time",
-    sealHint:"Tap the seal to open", stackHint:"Keep scrolling to turn the photos", portraitEyebrow:"The Couple", mapNote:"Illustration, not to scale · tap the map to open Google Maps",
+    sealHint:"Tap the seal to open", stackHint:"Tap or swipe the photo", prevPhoto:"Previous photo", nextPhoto:"Next photo", portraitEyebrow:"The Couple", mapNote:"Illustration, not to scale · tap the map to open Google Maps",
     coverPre:"The wedding of", openInvite:"Open Invitation", openQuiet:"Open without music", music:"Music",
     groom:"Mahesh", bride:"Muttu",
     blessing:"With the blessings of our beloved family and elders", inviteLine:"We joyfully invite you to the wedding of",
@@ -41,7 +41,7 @@ const T = {
     cardSign:"ಪ್ರೀತಿ ಮತ್ತು ಆತ್ಮೀಯ ವಂದನೆಗಳೊಂದಿಗೆ, ಎರಡೂ ಕುಟುಂಬಗಳಿಂದ", dateCaps:"06 ಡಿಸೆಂಬರ್ 2026", thankYou:"ಧನ್ಯವಾದಗಳು", toTop:"ಮೇಲಕ್ಕೆ",
     mantraEyebrow:"ಪವಿತ್ರ ಪ್ರತಿಜ್ಞೆ", mantraText:"ನನ್ನ ಜೀವನಕ್ಕೆ ಆಧಾರವಾದ ಈ ಮಂಗಳ ಸೂತ್ರದಿಂದ ನಿನ್ನನ್ನು ಬಂಧಿಸುತ್ತೇನೆ. ನೀನು ನೂರು ವರ್ಷ ಸುಖವಾಗಿ ಬಾಳು.",
     shubha:"ಶುಭ ವಿವಾಹ", scroll:"ಕೆಳಗೆ ಸರಿಸಿ", weddingEyebrow:"ಶುಭ ದಿನ", weddingHead:"ನಮ್ಮ ವಿವಾಹ ದಿನ", dateDay:"ಭಾನುವಾರ", dateFull:"06 ಡಿಸೆಂಬರ್ 2026", timeNote:"ಭಾರತೀಯ ಕಾಲಮಾನ",
-    sealHint:"ತೆರೆಯಲು ಮುದ್ರೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ", stackHint:"ಫೋಟೋಗಳನ್ನು ನೋಡಲು ಕೆಳಗೆ ಸರಿಸಿ", portraitEyebrow:"ವಧೂವರರು", mapNote:"ಚಿತ್ರಣ ಮಾತ್ರ · ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಲು ನಕ್ಷೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ",
+    sealHint:"ತೆರೆಯಲು ಮುದ್ರೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ", stackHint:"ಫೋಟೋವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಅಥವಾ ಸರಿಸಿ", prevPhoto:"ಹಿಂದಿನ ಫೋಟೋ", nextPhoto:"ಮುಂದಿನ ಫೋಟೋ", portraitEyebrow:"ವಧೂವರರು", mapNote:"ಚಿತ್ರಣ ಮಾತ್ರ · ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಲು ನಕ್ಷೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ",
     coverPre:"ಶುಭ ವಿವಾಹ", openInvite:"ಆಹ್ವಾನ ತೆರೆಯಿರಿ", openQuiet:"ಸಂಗೀತವಿಲ್ಲದೆ ತೆರೆಯಿರಿ", music:"ಸಂಗೀತ",
     groom:"ಮಹೇಶ್", bride:"ಮುತ್ತು",
     blessing:"ನಮ್ಮ ಪ್ರೀತಿಯ ಕುಟುಂಬ ಮತ್ತು ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ", inviteLine:"ಇವರ ಶುಭ ವಿವಾಹಕ್ಕೆ ತಮ್ಮನ್ನು ಸಂತೋಷದಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ",
@@ -69,6 +69,7 @@ function applyLanguage() {
   root.lang = lang;
   document.body.classList.toggle("kn", lang === "kn");
   document.querySelectorAll("[data-i18n]").forEach(el => { const v = t[el.dataset.i18n]; if (v !== undefined) el.textContent = v; });
+  document.querySelectorAll("[data-i18n-label]").forEach(el => { const v = t[el.dataset.i18nLabel]; if (v !== undefined) el.setAttribute("aria-label", v); });
   const lb = $("langBtn"); lb.textContent = t.langSwitch; lb.lang = t.langCode;
   lb.setAttribute("aria-label", lang === "kn" ? "Switch to English" : "ಕನ್ನಡಕ್ಕೆ ಬದಲಾಯಿಸಿ");
   $("shareBtn").href = "https://wa.me/?text=" + encodeURIComponent(shareText());
@@ -158,6 +159,7 @@ if (window.QRCode) drawQR(); else window.addEventListener("load", drawQR, { once
     cards.forEach((c, i) => { c.style.setProperty("--i", i); c.querySelector("figcaption").textContent = `${String(i + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`; });
     sec.style.setProperty("--n", cards.length);
     window.dispatchEvent(new Event("resize"));
+    if (typeof PhotoStack !== "undefined" && PhotoStack.refresh) PhotoStack.refresh();
   });
 })();
 
@@ -259,36 +261,74 @@ document.querySelectorAll("canvas.petals").forEach(c => {
   document.querySelectorAll("svg.garland").forEach(el => { el.innerHTML = svg; });
 })();
 
-/* Photo stack: as the guest scrolls, the top photo is dragged off to one side and the next comes forward */
-(function () {
-  const sec = document.querySelector(".stack-sec"); if (!sec) return;
-  if (reduceMotion) { sec.classList.add("stack-static"); return; }
-  const tilt = [-4, 3, -2, 4, -3];
-  let ticking = false;
-  function update() {
-    ticking = false;
-    const cards = [...sec.querySelectorAll(".pcard")], n = cards.length;
-    const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
-    const p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
-    const f = p * (n - 1);                                   // how many cards have been dragged away
-    cards.forEach((c, i) => {
-      const gone = Math.min(1, Math.max(0, f - i));          // 0 = in the stack, 1 = dragged off
-      const depth = Math.max(0, i - f);                      // place in the stack behind the top card
-      const dir = i % 2 ? 1 : -1;
-      const eased = gone * gone * (3 - 2 * gone);
-      const x = dir * eased * 115, y = depth * 14 - eased * 6;
-      const rot = tilt[i % tilt.length] * Math.min(1, depth) + dir * eased * 22;
-      const sc = 1 - Math.min(depth, 3) * .05;
-      c.style.transform = `translate(${x.toFixed(2)}%, ${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(3)})`;
-      c.style.opacity = String(i < n - 1 ? Math.min(1 - Math.max(0, (gone - .6) / .4), 1 - Math.max(0, depth - 3)) : 1);
-      c.style.zIndex = String(100 - i);
-      c.style.boxShadow = `0 ${(30 - depth * 6).toFixed(0)}px ${(60 - depth * 10).toFixed(0)}px rgba(40,10,16,${(.22 - depth * .04).toFixed(2)})`;
+/* Photo stack: tap the top photo (or swipe it, or use the arrows) to send it away and show the next one */
+const PhotoStack = (function () {
+  const sec = document.querySelector(".stack-sec"); if (!sec) return {};
+  const stack = sec.querySelector(".stack");
+  const prev = $("stackPrev"), next = $("stackNext"), count = $("stackCount");
+  const tilt = [-4, 3, -2, 4, -3, 2, -3];
+  let cur = 0, gone = [];                                   // gone[i] = -1 (left) or 1 (right) once card i is sent away
+  const cards = () => [...sec.querySelectorAll(".pcard")];
+  function layout(dragX = 0) {
+    const cs = cards(), n = cs.length;
+    cs.forEach((c, i) => {
+      const depth = i - cur;
+      c.classList.toggle("top", depth === 0);
+      c.setAttribute("aria-hidden", depth === 0 ? "false" : "true");
+      if (depth < 0) {                                       // already sent away
+        const dir = gone[i] || -1;
+        c.style.transform = `translate(${dir * 135}%, -4%) rotate(${dir * 24}deg)`;
+        c.style.opacity = "0"; c.style.zIndex = String(200 + i); return;
+      }
+      const d = Math.min(depth, 3);
+      const x = depth === 0 ? dragX : 0;
+      const rot = depth === 0 ? dragX / 18 : tilt[i % tilt.length] * .8;
+      c.style.transform = `translate(${x}px, ${d * 12}px) rotate(${rot.toFixed(2)}deg) scale(${(1 - d * .045).toFixed(3)})`;
+      c.style.opacity = depth > 3 ? "0" : "1";
+      c.style.zIndex = String(100 - depth);
     });
-    sec.querySelector(".stack-hint").style.opacity = p > .92 ? "0" : "";
+    if (count) count.textContent = `${String(Math.min(cur + 1, n)).padStart(2, "0")} / ${String(n).padStart(2, "0")}`;
+    if (prev) prev.disabled = cur === 0;
   }
-  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-  addEventListener("resize", update);
-  update();
+  function go(step, dir) {
+    const n = cards().length; if (!n) return;
+    if (step > 0) {
+      if (cur >= n - 1) { cur = 0; gone = []; }               // after the last photo, bring the pile back
+      else { gone[cur] = dir || (cur % 2 ? 1 : -1); cur++; }
+    } else if (cur > 0) { cur--; }
+    stack.classList.remove("dragging"); layout();
+  }
+  // tap or swipe the top photo
+  let startX = 0, startY = 0, dx = 0, dragging = false, moved = false, pid = null;
+  stack.addEventListener("pointerdown", e => {
+    if (!e.target.closest(".pcard.top")) return;
+    dragging = true; moved = false; dx = 0; startX = e.clientX; startY = e.clientY; pid = e.pointerId;
+  });
+  stack.addEventListener("pointermove", e => {
+    if (!dragging || e.pointerId !== pid) return;
+    dx = e.clientX - startX;
+    if (!moved && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - startY)) { moved = true; stack.setPointerCapture(pid); stack.classList.add("dragging"); }
+    if (moved) { e.preventDefault(); layout(dx); }
+  });
+  function end(e) {
+    if (!dragging || e.pointerId !== pid) return;
+    dragging = false;
+    if (!moved) { if (e.type === "pointerup") go(1); return; }
+    const w = stack.clientWidth;
+    if (Math.abs(dx) > w * .22) go(1, dx > 0 ? 1 : -1);
+    else { stack.classList.remove("dragging"); layout(); }
+  }
+  stack.addEventListener("pointerup", end);
+  stack.addEventListener("pointercancel", end);
+  stack.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight" || e.key === "Enter" || e.key === " ") { e.preventDefault(); go(1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+  });
+  prev && prev.addEventListener("click", () => go(-1));
+  next && next.addEventListener("click", () => go(1));
+  addEventListener("resize", () => layout());
+  layout();
+  return { refresh() { cur = Math.min(cur, Math.max(0, cards().length - 1)); layout(); } };
 })();
 
 /* Scroll progress */
