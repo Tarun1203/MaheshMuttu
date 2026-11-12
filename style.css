@@ -523,3 +523,17 @@ body.kn .stack-hint{font-family:var(--kn);letter-spacing:.02em;text-transform:no
 .portrait-frame{width:min(86vw,calc(72vh * .72));width:min(86vw,calc(72svh * .72));aspect-ratio:13/18}
 .portrait-img{object-position:50% 20%}
 @media (max-height:640px){.stack{max-height:none}}
+
+/* ---- desktop: heading on the left, a much larger photo stack on the right ---- */
+@media (min-width:900px) and (min-aspect-ratio:1/1){
+  .stack-stick{padding-block:24px}
+  .stack-stick .inner{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:1fr auto auto auto auto 1fr;column-gap:clamp(40px,7vw,120px);align-items:center;max-width:1280px;width:100%;text-align:left}
+  .stack-stick .inner>.label{grid-area:2/1}
+  .stack-stick .inner>.title{grid-area:3/1;font-size:clamp(2.6rem,4.6vw,4.4rem)}
+  .stack-stick .inner>.feather{grid-area:4/1;margin:18px 0 22px}
+  .stack-stick .inner>.stack-hint{grid-area:5/1;margin:0}
+  .stack-stick .inner>.stack-hint::after{margin-left:0}
+  .stack-stick .inner>.stack{grid-area:1/2/-1/3;width:min(44vw,calc(80vh * .7));width:min(44vw,calc(80svh * .7));margin:0}
+  .pcard{padding:14px 14px 44px}
+  .pcard figcaption{bottom:14px;font-size:.74rem}
+}
